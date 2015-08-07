@@ -1,0 +1,25 @@
+
+<h1>
+  <%= @order.table_number %>
+</h1>
+
+<% if @order.foods_orders.present? %>
+  <h3>Foods: </h3>
+  <ul>
+    <% @order.foods_orders.each do |co| %> 
+      <li><%= co.food.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%></li>
+    <% end %>
+  </ul>
+<% end %>
+  
+<% if @order.drinks_orders.present? %>
+<h3>Drinks: </h3>
+  <ul>
+    <% @order.drinks_orders.each do |co| %> 
+      <li><%= co.drink.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

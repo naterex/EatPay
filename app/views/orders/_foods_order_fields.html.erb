@@ -1,0 +1,11 @@
+<br/>
+  <%= f.label :food %>
+  <%= f.select :food_id, options_for_select(Food.all.map{|c| [c.name, c.id]}, f.object.food_id)%>
+  
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %>
+
+  <%#= f.label :status %>
+  <%#= f.text_field :status %>
+
+  <%= f.check_box :_destroy %><%= f.label :_destroy, "Remove Food" %><br>

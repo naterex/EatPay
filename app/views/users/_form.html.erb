@@ -1,0 +1,31 @@
+<div class="col-md-4">
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <p><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</p>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: "form-control" %>
+
+    <%= f.label :role %><br>
+    <%= f.select :role_id, options_for_select( Role.all.map { |role| [role.name, role.id] }, f.object.role_id), {}, {class: "form-control"} %>
+      
+
+  </div>
+
+  <%= f.submit 'Save user', :class => 'btn btn-primary' %>
+  <%= link_to 'Back', users_path, class: "btn btn-default" %>
+
+  <% end %>
+
+</div>

@@ -1,0 +1,29 @@
+<h3>Foods</h3>
+<div class="row">
+  
+    <% @orders.each do |order| %>
+    <div class="col-md-4">
+      <% if order.foods_orders.first.try(:status) == 0 %>
+      
+      <!-- panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Table <%= order.table_number %></h3>
+          <div class="btn-group pull-right">
+            <%= link_to 'Delete', update_foods_status_path(:id => order.id), class: "btn btn-danger pull-right" %>
+          </div>
+        </div><!-- panel-heading -->
+        <div class="panel-body">
+          <ul>
+          <% order.foods_orders.each do |c| %>
+              <li><%= c.food.name %> ( <%= c.quantity %>x )</li>
+            <% end %>
+          </ul>
+        </div>
+      </div><!-- /panel -->
+
+      <% else %>
+      <% end %>
+    </div><!-- col-md-4 -->
+    <% end %>
+</div>

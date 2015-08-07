@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Listing Drinks</h3>
+<%= link_to 'New Drink', new_drink_path,class: "btn btn-primary" %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drinks.each_with_index do |drink, i| %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= drink.name %></td>
+        <!-- <td><%= link_to 'Show', drink %></td> -->
+        <td><%= link_to 'Edit', edit_drink_path(drink), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Delete', drink, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,24 @@
+<div class="col-md-4">
+
+<%= form_for(@food) do |f| %>
+  <% if @food.errors.any? %>
+    <div id="error_explanation">
+      <p><%= pluralize(@food.errors.count, "error") %> prohibited this food from being saved:</p>
+
+      <ul>
+      <% @food.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <%= f.submit 'Save Food', :class => 'btn btn-primary' %>
+  <%= link_to 'Back', foods_path, class: "btn btn-primary" %>
+<% end %>
+
+</div>
