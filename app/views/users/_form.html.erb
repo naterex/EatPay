@@ -19,12 +19,13 @@
 
     <%= f.label :role %><br>
     <%= f.select :role_id, options_for_select( Role.all.map { |role| [role.name, role.id] }, f.object.role_id), {}, {class: "form-control"} %>
+
       
 
   </div>
 
-  <%= f.submit 'Save user', :class => 'btn btn-primary' %>
-  <%= link_to 'Back', users_path, class: "btn btn-default" %>
+  <%= f.button :submit, class: "btn btn-primary" do %>Save user <i class='fa fa-check'></i><% end %>
+  <%= link_to users_path, class: "btn btn-default" do %>Back<% end %>
 
   <% end %>
 

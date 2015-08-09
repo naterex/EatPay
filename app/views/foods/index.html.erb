@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h3>Listing Foods</h3>
-<%= link_to 'New Food', new_food_path, class: "btn btn-primary" %>
+<h3>Foods</h3>
+<%= link_to new_food_path, class: "btn btn-primary" do %>Add Food <i class="fa fa-plus"></i><% end %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -17,8 +17,8 @@
         <td><%= i+1 %></td>
         <td><%= food.name %></td>
         <!-- <td><%= link_to 'Show', food, class: "btn btn-default" %></td> -->
-        <td><%= link_to 'Edit', edit_food_path(food), class: "btn btn-primary" %></td>
-        <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td><%= link_to edit_food_path(food), class: "btn btn-primary" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
+        <td><%= link_to food, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
       </tr>
     <% end %>
   </tbody>

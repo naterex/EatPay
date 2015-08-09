@@ -1,0 +1,45 @@
+<h1>Add New User</h1>
+
+<div class="col-md-4">
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <p><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</p>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="form-group">
+    	<%= f.label :email %><br>
+   		<%= f.text_field :email, class: "form-control" %>
+   	</div>
+
+   	<div class="form-group">
+    	<%= f.label :password %><br>
+   		<%= f.password_field :password, class: "form-control" %>
+   	</div>
+
+   	<div class="form-group">
+    	<%= f.label :password_confirmation %><br>
+   		<%= f.password_field :password_confirmation, class: "form-control" %>
+   	</div>
+
+   	<div class="form-grup">
+    	<%= f.label :role %><br>
+    	<%= f.select :role_id, options_for_select( Role.all.map { |role| [role.name, role.id] }, f.object.role_id), {}, {class: "form-control"} %>
+    </div>
+
+    <br>
+
+  <%= f.button :submit, class: "btn btn-primary" do %>Save user <i class='fa fa-check'></i><% end %>
+  <%= link_to users_path, class: "btn btn-default" do %>Back<% end %>
+
+  <% end %>
+
+</div>

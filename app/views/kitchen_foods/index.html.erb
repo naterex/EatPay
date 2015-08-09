@@ -10,7 +10,9 @@
         <div class="panel-heading clearfix">
           <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Table <%= order.table_number %></h3>
           <div class="btn-group pull-right">
-            <%= link_to 'Delete', update_foods_status_path(:id => order.id), class: "btn btn-danger pull-right" %>
+            <% if can? :update_foods_status, Order %>
+              <%= link_to 'Delete', update_foods_status_path(:id => order.id), class: "btn btn-danger pull-right" %>
+            <% end %>
           </div>
         </div><!-- panel-heading -->
         <div class="panel-body">

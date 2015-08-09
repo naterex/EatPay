@@ -1,4 +1,4 @@
-<h3>All Orders</h3>
+<h3>Orders</h3>
 <%#= link_to 'New order', new_order_path, class: "btn btn-primary pull-right" %>
 <table class="table table-striped">
   <thead>
@@ -13,24 +13,28 @@
   <tbody>
     
       <% @orders.each do |order| %>
-      <% if order.foods_orders.first.try(:status) == 0 || order.drinks_orders.first.try(:status) == 0 %>
-        <tr>
-          <td><%= order.table_number %></td>
-          <td>
-            <% order.foods_orders.each do |c| %>
-              <p><%= c.food.try(:name) %> ( <%= c.quantity %>x )</p>
+        <% if order.foods_orders.first.try(:status) == 0 || order.drinks_orders.first.try(:status) == 0 %>
+          <tr>
+            <td><%= order.table_number %></td>
+            <td>
+              <% order.foods_orders.each do |c| %>
+                <p><%= c.food.try(:name) %> ( <%= c.quantity %>x )</p>
+              <% end %>
+            </td>
+            <td>
+              <% order.drinks_orders.each do |d| %>
+                <p><%= d.drink.try(:name) %> ( <%= d.quantity %>x )</p>
+              <% end %>
+            </td>
+            <td><%#= link_to 'Show', order, class: "btn btn-primary" %></td>
+            <% if can? :edit, Order %>
+              <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-primary" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
             <% end %>
-          </td>
-          <td>
-            <% order.drinks_orders.each do |d| %>
-              <p><%= d.drink.try(:name) %> ( <%= d.quantity %>x )</p>
+            <% if can? :destroy, Order %>
+              <td class="vert-align"><%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
             <% end %>
-          </td>
-          <td><%#= link_to 'Show', order, class: "btn btn-primary" %></td>
-          <td class="vert-align"><%= link_to 'Edit', edit_order_path(order), class: "btn btn-primary" %></td>
-          <td class="vert-align"><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-        </tr>
-      <% end %>
+          </tr>
+        <% end %>
       <% end %>
     
   </tbody>

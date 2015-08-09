@@ -1,5 +1,7 @@
 class DrinksController < ApplicationController
 
+  load_and_authorize_resource
+
   before_action :authenticate_user!
   before_action :set_drink, only: [:show, :edit, :update, :destroy]
 
@@ -30,7 +32,7 @@ class DrinksController < ApplicationController
 
     respond_to do |format|
       if @drink.save
-        format.html { redirect_to drinks_path, notice: 'Drink was successfully created.' }
+        format.html { redirect_to drinks_path, flash: {success: "Drink was successfully created."} }
         format.json { render :show, status: :created, location: @drink }
       else
         format.html { render :new }
@@ -44,7 +46,7 @@ class DrinksController < ApplicationController
   def update
     respond_to do |format|
       if @drink.update(drink_params)
-        format.html { redirect_to drinks_path, notice: 'Drink was successfully updated.' }
+        format.html { redirect_to drinks_path, flash: {info: "Drink was successfully updated."} }
         format.json { render :show, status: :ok, location: @drink }
       else
         format.html { render :edit }
@@ -58,7 +60,7 @@ class DrinksController < ApplicationController
   def destroy
     @drink.destroy
     respond_to do |format|
-      format.html { redirect_to drinks_url, notice: 'Drink was successfully destroyed.' }
+      format.html { redirect_to drinks_url, flash: {info: "Drink was successfully destroyed."} }
       format.json { head :no_content }
     end
   end

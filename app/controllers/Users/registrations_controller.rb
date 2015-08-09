@@ -1,4 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+
+  before_filter :require_no_authentication, only: [:new]
+
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 
@@ -8,9 +11,32 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    build_resource(sign_up_params)
+
+    resource.save
+    yield resource if block_given?
+    if resource.persisted?
+      if resource.active_for_authentication?
+        
+        if !current_user.has_role?('Admin')
+          sign_up(resource_name, resource)
+          respond_with resource, location: after_sign_up_path_for(resource)
+        else
+          #set_flash_message :notice, :signed_up if is_flashing_format?
+          respond_with resource, location: users_path
+        end
+      else
+        set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
+        expire_data_after_sign_in!
+        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+      end
+    else
+      clean_up_passwords resource
+      set_minimum_password_length
+      respond_with resource
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -36,8 +62,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
+    def update_resource(resource, params)
+      if params[:current_password].blank?
+        params.delete(:current_password)
+        resource.update_without_password(params)
+      else
+        params.delete(:current_password)
+        resource.update(params)
+      end
+    end
+    
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.for(:sign_up) << :attribute

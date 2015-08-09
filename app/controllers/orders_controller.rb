@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  
+  load_and_authorize_resource
+
   before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
@@ -29,7 +32,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to @order, flash: {success: "Order was successfully created."}  }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -43,7 +46,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order, flash: {info: "Order was successfully updated."}  }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -57,7 +60,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to orders_url, flash: {info: "Order was successfully deleted."}  }
       format.json { head :no_content }
     end
   end
@@ -66,16 +69,24 @@ class OrdersController < ApplicationController
   def update_foods_status
     @orders = Order.all
     order_id = Order.find(params[:id])
-    FoodsOrder.where(order_id: order_id).update_all(:status => 1)
-    redirect_to kitchen_foods_path
+    if FoodsOrder.where(order_id: order_id).update_all(:status => 1)
+      redirect_to kitchen_foods_path
+    else
+      flash[:danger] = "You're not allowed to delete this food order."
+      redirect_to root_path
+    end
   end
 
   # update drinks status
   def update_drinks_status
     @orders = Order.all
     order_id = Order.find(params[:id])
-    DrinksOrder.where(order_id: order_id).update_all(:status => 1)
-    redirect_to kitchen_drinks_path
+    if DrinksOrder.where(order_id: order_id).update_all(:status => 1)
+      redirect_to kitchen_drinks_path
+    else
+      flash[:danger] = "You're not allowed to delete this drink order."
+      redirect_to root_path
+    end
   end
 
   private

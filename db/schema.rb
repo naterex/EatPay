@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807113010) do
+ActiveRecord::Schema.define(version: 20150809154757) do
 
   create_table "drinks", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "drinks", ["name"], name: "index_drinks_on_name", unique: true
 
   create_table "drinks_orders", force: :cascade do |t|
     t.integer  "drink_id"
@@ -33,6 +35,8 @@ ActiveRecord::Schema.define(version: 20150807113010) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "foods", ["name"], name: "index_foods_on_name", unique: true
 
   create_table "foods_orders", force: :cascade do |t|
     t.integer  "food_id"

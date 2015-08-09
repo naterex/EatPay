@@ -1,3 +1,5 @@
+<h3>Users</h3>
+<%= link_to new_user_path, class: "btn btn-primary" do %>Add new user &nbsp;<i class="fa fa-plus"></i><% end %>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -5,7 +7,7 @@
 		<th>User ID</th>
 		<th>Email</th>
 		<th>Role</th>
-		<th colspan="2" class="tcenter">Action</th>
+		<th colspan="2" class="tcenter"></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -15,8 +17,8 @@
 				<td><%= user.id %></td>
 				<td><%= user.email %></td>
 				<td><%= user.role.try(:name) %></td>
-				<td class="tcenter"><%= link_to 'Edit', edit_user_path(user), class: "btn btn-primary" %></td>
-				<td class="tcenter"><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+				<td class="tcenter"><%= link_to edit_user_path(user), class: "btn btn-primary" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
+        		<td class="tcenter"><%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
 			</tr>
 		<% end %>
 	</tbody>

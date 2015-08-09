@@ -17,8 +17,9 @@
     <%= f.label :name %><br>
     <%= f.text_field :name, class: "form-control" %>
   </div>
-  <%= f.submit 'Save Drink', :class => 'btn btn-primary' %>
-  <%= link_to 'Back', drinks_path, class: "btn btn-primary" %>
+
+  <%= f.button :submit, class: "btn btn-primary" do %>Save Drink <i class='fa fa-check'></i><% end %>
+  <%= link_to drinks_path, class: "btn btn-default" do %>Back<% end %>
 <% end %>
 
 </div>
