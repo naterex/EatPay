@@ -32,7 +32,13 @@
 
    	<div class="form-grup">
     	<%= f.label :role %><br>
-    	<%= f.select :role_id, options_for_select( Role.all.map { |role| [role.name, role.id] }, f.object.role_id), {}, {class: "form-control"} %>
+      <!-- if user is Admin, show all 4 roles -->
+      <% if current_user.has_role?('Admin') %>
+    	<%= f.select :role_id, options_for_select( Role.all.map { |role| [role.name, role.id] }, f.object.role_id), {}, {class: "form-control", disabled: false } %>
+      <!-- if user is not Admin, only show 3 roles (without Admin) -->
+      <% else %>
+        <%= f.select :role_id, options_for_select( Role.where.not(name: 'Admin').map { |role| [role.name, role.id] }, f.object.role_id), {}, {class: "form-control", disabled: false } %>
+      <% end %>
     </div>
 
     <br>

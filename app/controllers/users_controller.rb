@@ -31,6 +31,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    if current_user
+      if current_user.has_role?('Admin') || current_user.has_role?('Manager')
+        User.skip_callback(:create, :after, :set_default_user_role)
+        
+      end
+    end
+
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, flash: {success: "User was successfully created."}  }

@@ -1,9 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
   before_filter :require_no_authentication, only: [:new]
-
-# before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
+  
+  # add role_id strong params for new user registration (add new user)
+  # see configure_sign_up_params menthod
+  before_filter :configure_sign_up_params
 
   # GET /resource/sign_up
   # def new
@@ -14,18 +15,33 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
 
+    # if Admin OR Manager is trying to add a new user, skip the default role (waiter)
+    # instead, use the role from the dropdown
+    if current_user
+      if current_user.has_role?('Admin') || current_user.has_role?('Manager')
+        User.skip_callback(:create, :after,  :set_default_user_role)
+      end
+    # if user is signing up normally at /users/sign_up, set the default role to waiter
+    else
+      User.set_callback(:create, :after, :set_default_user_role)
+    end
+
     resource.save
     yield resource if block_given?
     if resource.persisted?
       if resource.active_for_authentication?
-        
-        if !current_user.try(:has_role?,'Admin')
+
+        # if Admin OR Manager is trying to add a new user, don't sign them in after create the user
+        # instead, keep them signed in as Admin OR Manager
+        if current_user.try(:has_role?, 'Admin') || current_user.try(:has_role?, 'Manager')
+          respond_with resource, location: users_path
+        else
+        # if the user sign up manually at /users/sign_up/
+        # log them in automatically after signed up
           sign_up(resource_name, resource)
           respond_with resource, location: after_sign_up_path_for(resource)
-        else
-          #set_flash_message :notice, :signed_up if is_flashing_format?
-          respond_with resource, location: users_path
         end
+
       else
         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
         expire_data_after_sign_in!
@@ -75,9 +91,9 @@ class RegistrationsController < Devise::RegistrationsController
     end
     
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.for(:sign_up) << :role_id
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

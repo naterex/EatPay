@@ -37,6 +37,7 @@ gem 'gravatar_image_tag'
 gem 'font-awesome-sass'
 
 group :development, :test do
+  gem 'pry-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
