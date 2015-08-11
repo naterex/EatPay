@@ -1,4 +1,4 @@
-class Users::RegistrationsController < Devise::RegistrationsController
+class RegistrationsController < Devise::RegistrationsController
 
   before_filter :require_no_authentication, only: [:new]
 
