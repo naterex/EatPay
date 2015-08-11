@@ -19,7 +19,7 @@ class RegistrationsController < Devise::RegistrationsController
     if resource.persisted?
       if resource.active_for_authentication?
         
-        if !current_user.has_role?('Admin')
+        if !current_user.try(:has_role?,'Admin')
           sign_up(resource_name, resource)
           respond_with resource, location: after_sign_up_path_for(resource)
         else
