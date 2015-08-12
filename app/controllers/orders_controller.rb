@@ -97,6 +97,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:table_number, foods_orders_attributes: [:id, :quantity, :status, :food_id ,:_destroy], drinks_orders_attributes: [:id, :quantity, :status, :drink_id, :_destroy])
+      params.require(:order).permit(:table_number, foods_orders_attributes: [:id, :quantity, :takeaway, :status, :food_id ,:_destroy], drinks_orders_attributes: [:id, :quantity, :takeaway, :status, :drink_id, :_destroy])
     end
 end

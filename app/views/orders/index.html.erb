@@ -18,12 +18,22 @@
             <td><%= order.table_number %></td>
             <td>
               <% order.foods_orders.each do |c| %>
-                <p><%= c.food.try(:name) %> ( <%= c.quantity %>x )</p>
+                <p>
+                  <%= c.quantity %>x <%= c.food.try(:name) %>
+                  <% if c.takeaway == true %>
+                    <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
+                  <% end %>
+                </p>
               <% end %>
             </td>
             <td>
               <% order.drinks_orders.each do |d| %>
-                <p><%= d.drink.try(:name) %> ( <%= d.quantity %>x )</p>
+                <p>
+                  <%= d.quantity %>x <%= d.drink.try(:name) %>
+                  <% if d.takeaway == true %>
+                    <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
+                  <% end %>
+                </p>
               <% end %>
             </td>
             <td><%#= link_to 'Show', order, class: "btn btn-primary" %></td>

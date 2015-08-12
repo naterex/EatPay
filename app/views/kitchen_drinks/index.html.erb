@@ -1,4 +1,10 @@
+<!-- Auto refresh this page every 10 seconds (only in production) -->
+<% if Rails.env.production? %>
+  <meta http-equiv="refresh" content="10" />
+<% end %>
+
 <h3>Drinks</h3>
+
 <div class="row">
   
     <% @orders.each do |order| %>
@@ -18,13 +24,18 @@
         <div class="panel-body">
           <ul>
           <% order.drinks_orders.each do |c| %>
-              <li><%= c.drink.name %> ( <%= c.quantity %>x )</li>
+              <li>
+                <%= c.quantity %>x <%= c.drink.name %>
+                <% if c.takeaway == true %>
+                  <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
+                <% end %>
+              </li>
             <% end %>
           </ul>
         </div>
       </div><!-- /panel -->
-
       <% else %>
+
       <% end %>
     </div><!-- col-md-4 -->
     <% end %>

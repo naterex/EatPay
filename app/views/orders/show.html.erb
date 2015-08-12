@@ -7,7 +7,13 @@
   <h3>Foods: </h3>
   <ul>
     <% @order.foods_orders.each do |co| %> 
-      <li><%= co.food.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%></li>
+      <li><%= co.food.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%> | Takeaway: 
+        <% if co.takeaway == true %>
+          Yes
+          <% else %>
+          No
+        <% end %>
+      </li>
     <% end %>
   </ul>
 <% end %>
@@ -16,7 +22,13 @@
 <h3>Drinks: </h3>
   <ul>
     <% @order.drinks_orders.each do |co| %> 
-      <li><%= co.drink.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%></li>
+      <li><%= co.drink.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%> | Takeaway:
+        <% if co.takeaway == true %>
+          Yes
+          <% else %>
+          No
+        <% end %>
+      </li>
     <% end %>
   </ul>
 <% end %>
