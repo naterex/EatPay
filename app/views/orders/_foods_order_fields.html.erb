@@ -1,14 +1,24 @@
 <br/>
+<div class="row">
+<div class="col-xs-5 col-md-9">
   <%= f.label :food %>
-  <%= f.select :food_id, options_for_select(Food.all.map{|c| [c.name, c.id]}, f.object.food_id)%>
+  <%= f.select :food_id, options_for_select(Food.all.map{|c| [c.name, c.id]}, f.object.food_id), {}, {class: "form-control selectpicker",	"data-live-search" => "true" } %>
+</div>
   
-  <%= f.label :quantity %>
-  <%= f.text_field :quantity %>
+  <div class="col-xs-2 col-md-1">
+  	<%= f.label :quantity, "Qty" %>
+  	<%= f.number_field :quantity, class: "form-control" %>
+  </div>
 
-  <%= f.check_box :takeaway %>
-  <%= f.label :takeaway, "Takeaway?" %>
+  <div class="col-xs-2 col-md-1">
+  	<%= f.label :takeaway, "TA?" %>
+  	<%= f.check_box :takeaway, class: "form-control" %>
+  </div>
 
   <%#= f.label :status %>
   <%#= f.text_field :status %>
-
-  <%= f.check_box :_destroy %><%= f.label :_destroy, "Remove Food" %><br>
+  <div class="col-xs-3 col-md-1">
+  	<%= f.label :_destroy, "Remove" %>
+  	<%= f.check_box :_destroy, class: "form-control" %>
+  </div>
+  </div>

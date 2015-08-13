@@ -1,51 +1,55 @@
-<h3>Orders</h3>
-<%#= link_to 'New order', new_order_path, class: "btn btn-primary pull-right" %>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Table No</th>
-      <th>Foods</th>
-      <th>Drinks</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-md-12">
+    <h3>Orders</h3>
+    <%#= link_to 'New order', new_order_path, class: "btn btn-primary pull-right" %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-md-2">Table</th>
+          <th class="col-md-4">Foods</th>
+          <th class="col-md-4">Drinks</th>
+          <th class="col-md-2" colspan="2"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    
-      <% @orders.each do |order| %>
-        <% if order.foods_orders.first.try(:status) == 0 || order.drinks_orders.first.try(:status) == 0 %>
-          <tr>
-            <td><%= order.table_number %></td>
-            <td>
-              <% order.foods_orders.each do |c| %>
-                <p>
-                  <%= c.quantity %>x <%= c.food.try(:name) %>
-                  <% if c.takeaway == true %>
-                    <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
+      <tbody>
+        
+          <% @orders.each do |order| %>
+            <% if order.foods_orders.first.try(:status) == 0 || order.drinks_orders.first.try(:status) == 0 %>
+              <tr>
+                <td><%= order.table_number %></td>
+                <td>
+                  <% order.foods_orders.each do |c| %>
+                    <p>
+                      <%= c.quantity %>x <%= c.food.try(:name) %>
+                      <% if c.takeaway == true %>
+                        <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
+                      <% end %>
+                    </p>
                   <% end %>
-                </p>
-              <% end %>
-            </td>
-            <td>
-              <% order.drinks_orders.each do |d| %>
-                <p>
-                  <%= d.quantity %>x <%= d.drink.try(:name) %>
-                  <% if d.takeaway == true %>
-                    <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
+                </td>
+                <td>
+                  <% order.drinks_orders.each do |d| %>
+                    <p>
+                      <%= d.quantity %>x <%= d.drink.try(:name) %>
+                      <% if d.takeaway == true %>
+                        <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
+                      <% end %>
+                    </p>
                   <% end %>
-                </p>
-              <% end %>
-            </td>
-            <td><%#= link_to 'Show', order, class: "btn btn-primary" %></td>
-            <% if can? :edit, Order %>
-              <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-primary" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
+                </td>
+                <td><%#= link_to 'Show', order, class: "btn btn-primary" %></td>
+                <% if can? :edit, Order %>
+                  <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-primary btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
+                <% end %>
+                <% if can? :destroy, Order %>
+                  <td class="vert-align"><%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
+                <% end %>
+              </tr>
             <% end %>
-            <% if can? :destroy, Order %>
-              <td class="vert-align"><%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
-            <% end %>
-          </tr>
-        <% end %>
-      <% end %>
-    
-  </tbody>
-</table>
+          <% end %>
+        
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-4 col-md-offset-4">
+	<div class="col-md-6 col-md-offset-3">
 
 		<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
 
@@ -12,6 +12,10 @@
 			&nbsp;
 			<%= link_to new_order_url, class: "btn btn-success" do %>
 				New Order <i class="fa fa-plus"></i>
+			<% end %>
+			&nbsp;
+			<%= link_to root_url, class: "btn btn-primary" do %>
+				View Orders <i class="fa fa-list-ul"></i>
 			<% end %>
 		</div>
 	</div>

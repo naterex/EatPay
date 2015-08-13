@@ -36,6 +36,10 @@ gem 'gravatar_image_tag'
 # Font Awesome
 gem 'font-awesome-sass'
 
+# Bootstrap Select
+# http://silviomoreto.github.io/bootstrap-select/
+gem 'bootstrap-select-rails'
+
 group :development, :test do
   gem 'pry-rails'
   # Use sqlite3 as the database for Active Record

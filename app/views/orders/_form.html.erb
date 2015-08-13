@@ -1,34 +1,39 @@
-<%= form_for(@order) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <p><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</p>
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+  <%= form_for(@order) do |f| %>
+    <% if @order.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</p>
 
-      <ul>
-      <% @order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :table_number %>
+      <%= f.number_field :table_number, class: "form-control" %>
     </div>
-  <% end %>
-  
-  <%= f.label :table_number %>
-  <%= f.text_field :table_number %>
 
-  <h4> Add Foods </h4>
-  <%= f.fields_for :foods_orders do |co| %>
-    <%= render 'foods_order_fields', f: co %>
-  <% end %>
-  <%= link_to_add_fields "Add Food", f, :foods_orders %>
-  
-  <h4> Add Drinks</h4>
-  <%= f.fields_for :drinks_orders do |co| %>
-    <%= render 'drinks_order_fields', f: co %>
-  <% end %>
-  <%= link_to_add_fields "Add Drink", f, :drinks_orders %>
+    <h4> Add Foods </h4>
+    <%= f.fields_for :foods_orders do |co| %>
+      <%= render 'foods_order_fields', f: co %>
+    <% end %>
+    <%= link_to_add_fields "Add food", f, :foods_orders %>
+    
+    <h4> Add Drinks</h4>
+    <%= f.fields_for :drinks_orders do |co| %>
+      <%= render 'drinks_order_fields', f: co %>
+    <% end %>
+    <%= link_to_add_fields "Add drink", f, :drinks_orders %>
 
-  <br><br>
-  
-  <div class="actions">
-    <%= f.submit %>
+    <br><br>
+    <%= f.button :submit, class: "btn btn-primary" do %>Submit order <i class='fa fa-check'></i><% end %>
+    &nbsp;
+    <%= link_to 'Back', orders_path, class: "btn btn-default" %>
+    
+  <% end %>
   </div>
-<% end %>
+</div>
