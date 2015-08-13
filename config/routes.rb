@@ -18,4 +18,7 @@ Rails.application.routes.draw do
 
   # kitchen drinks orders
   get 'kitchen_drinks',	to: 'kitchen_drinks#index'
+
+  # order success page
+  get '/orders/:id/success',  to: 'orders#order_success', as: :order_success
 end

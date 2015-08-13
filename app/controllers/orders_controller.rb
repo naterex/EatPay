@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   load_and_authorize_resource
 
   before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :order_success]
 
   # GET /orders
   # GET /orders.json
@@ -14,6 +14,9 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+  end
+
+  def order_success
   end
 
   # GET /orders/new
@@ -32,7 +35,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, flash: {success: "Order was successfully created."}  }
+        format.html { render :order_success }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -46,7 +49,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, flash: {info: "Order was successfully updated."}  }
+        format.html { render :order_success }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
