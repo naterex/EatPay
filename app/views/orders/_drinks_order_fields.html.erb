@@ -5,20 +5,21 @@
   <%= f.select :drink_id, options_for_select(Drink.all.map{|d| [d.name, d.id]}, f.object.drink_id), {}, {class: "form-control selectpicker", "data-live-search" => "true" } %>
 </div>
   
-  <div class="col-xs-2  col-md-1">
+  <div class="col-xs-3  col-md-1">
     <%= f.label :quantity, "Qty" %>
     <%= f.number_field :quantity, class: "form-control" %>
   </div>
 
   <div class="col-xs-2 col-md-1">
-    <%= f.label :takeaway, "TA?" %>
+    <i class="fa fa-truck"></i>
     <%= f.check_box :takeaway, class: "form-control" %>
   </div>
 
   <%#= f.label :status %>
   <%#= f.text_field :status %>
-  <div class="col-xs-3 col-md-1">
-    <%= f.label :_destroy, "Remove" %>
+  <div class="col-xs-2 col-md-1">
+    <i class="fa fa-trash-o"></i>
     <%= f.check_box :_destroy, class: "form-control" %>
   </div>
   </div>
+<br>
