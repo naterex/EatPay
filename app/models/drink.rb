@@ -1,9 +1,9 @@
 class Drink < ActiveRecord::Base
 	
 	has_many :drinks_order, dependent: :destroy
-	validates :name, :presence => true, :uniqueness => true
 
-	before_save :capitalize
+	before_validation :capitalize
+	validates :name, :presence => true, :uniqueness => true
 
 	private
 	   def capitalize
