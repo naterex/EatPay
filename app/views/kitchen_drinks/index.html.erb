@@ -17,7 +17,7 @@
           <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Table <%= order.table_number %></h3>
           <div class="btn-group pull-right">
             <% if can? :update_drinks_status, Order %>
-              <%= link_to 'Delete', update_drinks_status_path(:id => order.id), class: "btn btn-danger pull-right" %>
+              <%= link_to 'Mark as Done', update_drinks_status_path(:id => order.id), class: "btn btn-danger pull-right" %>
             <% end %>
           </div>
         </div><!-- panel-heading -->
