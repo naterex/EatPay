@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+ruby "2.2.3"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
@@ -40,6 +42,9 @@ gem 'font-awesome-sass'
 # http://silviomoreto.github.io/bootstrap-select/
 gem 'bootstrap-select-rails'
 
+# encode QR codes
+gem 'rqrcode', '~> 0.10.1'
+
 group :development, :test do
   gem 'pry-rails'
   # Use sqlite3 as the database for Active Record
@@ -59,5 +64,3 @@ group :production do
   gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end
-
-ruby "2.2.2"
