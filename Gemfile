@@ -48,6 +48,9 @@ gem 'rqrcode', '~> 0.10.1'
 gem 'braintree', '~> 2.58'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
+# get your Rails variables in your js
+gem 'gon', '~> 6.0', '>= 6.0.1'
+
 group :development, :test do
   gem 'pry-rails'
   # Use sqlite3 as the database for Active Record
