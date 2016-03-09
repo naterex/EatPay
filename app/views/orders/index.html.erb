@@ -14,12 +14,12 @@
           <th class="col-md-2">Drinks</th>
           <th class="col-md-1">Drink total</th>
           <th class="col-md-2">Grand total</th>
-          <th class="col-md-1"></th>
+          <th class="col-md-1 no-sort"></th>
           <% if can? :edit, Order %>
-            <th class="col-md-1"></th>
+            <th class="col-md-1 no-sort"></th>
           <% end %>
           <% if can? :destroy, Order %>
-            <th class="col-md-1"></th>
+            <th class="col-md-1 no-sort"></th>
           <% end %>
         </tr>
       </thead>

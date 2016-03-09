@@ -4,8 +4,6 @@ class OrdersController < ApplicationController
 
   before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
   before_action :set_order, only: [:show, :edit, :update, :destroy, :order_success]
-  before_action :calculate_total, only: [:create, :update]
-
 
   # GET /orders
   # GET /orders.json
@@ -37,6 +35,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.calculate_total
 
     respond_to do |format|
       if @order.save
@@ -52,8 +51,12 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+
     respond_to do |format|
       if @order.update(order_params)
+        @order.calculate_total
+        @order.save
+
         format.html { render :order_success }
         format.json { render :show, status: :ok, location: @order }
       else
@@ -99,23 +102,6 @@ class OrdersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-
-    def calculate_total
-      food_total = 0
-      @order.foods_orders.each do |order|
-        food_total += order.food.price
-      end
-      @order.food_total = food_total
-
-      drink_total = 0
-      @order.drinks_orders.each do |order|
-        drink_total += order.drink.price
-      end
-      @order.drink_total = drink_total
-
-      @order.grand_total = food_total + drink_total
-    end
-
     def set_order
       @order = Order.find(params[:id])
     end
