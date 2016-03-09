@@ -8,6 +8,8 @@ class Order < ActiveRecord::Base
 	accepts_nested_attributes_for :foods_orders, allow_destroy: true
 	accepts_nested_attributes_for :drinks_orders, allow_destroy: true
 
+  has_one :payment
+
   validates_presence_of :food_total
   validates_presence_of :drink_total
 

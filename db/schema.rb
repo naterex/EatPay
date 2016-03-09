@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309110123) do
+ActiveRecord::Schema.define(version: 20160309110805) do
 
   create_table "drinks", force: :cascade do |t|
     t.string   "name"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 20160309110123) do
     t.integer  "grand_total"
     t.boolean  "paid",         default: false
   end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "type"
+    t.string   "card"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "payments", ["order_id"], name: "index_payments_on_order_id", unique: true
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
