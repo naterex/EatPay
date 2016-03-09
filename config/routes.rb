@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {registrations: 'registrations'}
   
-  root "orders#index"
+  root "orders#landing"
 
   resources :orders
   resources :drinks

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   
+  skip_load_and_authorize_resource only: :landing
   load_and_authorize_resource
 
   before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
@@ -7,6 +8,11 @@ class OrdersController < ApplicationController
 
   # GET /orders
   # GET /orders.json
+
+  def landing
+    render layout: false
+  end
+
   def index
     @orders = Order.all
   end
