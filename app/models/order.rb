@@ -11,4 +11,21 @@ class Order < ActiveRecord::Base
   validates_presence_of :food_total
   validates_presence_of :drink_total
 
+  def calculate_total
+
+    food_total = 0
+    self.foods_orders.each do |order|
+      food_total += order.food.price * order.quantity
+    end
+    self.food_total = food_total
+
+    drink_total = 0
+    self.drinks_orders.each do |order|
+      drink_total += order.drink.price * order.quantity
+    end
+    self.drink_total = drink_total
+
+    self.grand_total = food_total + drink_total
+  end
+
 end
