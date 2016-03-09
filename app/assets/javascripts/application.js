@@ -21,7 +21,6 @@
 $( document ).ready(function() {
 
   $("#orders_table").DataTable({
-    "order": [[ 0, "asc" ]],
     "columnDefs": [ {
       "targets"  : 'no-sort',
       "orderable": false,
@@ -30,7 +29,9 @@ $( document ).ready(function() {
     "pageLength": 8,
     columnDefs: [
       { responsivePriority: 1, targets: 0 },
-      { responsivePriority: 2, targets: -1 }
+      { responsivePriority: 7, targets: -1 },
+      { responsivePriority: 8, targets: -2 },
+      { responsivePriority: 9, targets: -3 },
     ]
   });
 
