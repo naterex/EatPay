@@ -4,10 +4,10 @@
   <%= f.label :food %>
   <%= f.select :food_id, options_for_select(Food.all.map{|c| [c.name, c.id]}, f.object.food_id), {}, {class: "form-control selectpicker",	"data-live-search" => "true" } %>
 </div>
-  
+
   <div class="col-xs-3 col-md-1">
   	<%= f.label :quantity, "Qty" %>
-  	<%= f.number_field :quantity, class: "form-control" %>
+  	<%= f.number_field :quantity, min: 1, class: "form-control" %>
   </div>
 
   <div class="col-xs-2 col-md-1">

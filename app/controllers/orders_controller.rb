@@ -1,9 +1,11 @@
 class OrdersController < ApplicationController
-  
+
   load_and_authorize_resource
 
   before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
   before_action :set_order, only: [:show, :edit, :update, :destroy, :order_success]
+  before_action :calculate_total, only: [:create, :update]
+
 
   # GET /orders
   # GET /orders.json
@@ -94,12 +96,27 @@ class OrdersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def calculate_total
+      food_total = 0
+      @order.foods_orders.each do |order|
+        food_total += order.food.price
+      end
+      @order.food_total = food_total
+
+      drink_total = 0
+      @order.drinks_orders.each do |order|
+        drink_total += order.drink.price
+      end
+      @order.drink_total = drink_total
+    end
+
     def set_order
       @order = Order.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:table_number, foods_orders_attributes: [:id, :quantity, :takeaway, :status, :food_id ,:_destroy], drinks_orders_attributes: [:id, :quantity, :takeaway, :status, :drink_id, :_destroy])
+      params.require(:order).permit(:table_number, foods_orders_attributes: [:id, :quantity, :takeaway, :status, :food_id, :_destroy], drinks_orders_attributes: [:id, :quantity, :takeaway, :status, :drink_id, :_destroy])
     end
 end

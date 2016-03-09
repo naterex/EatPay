@@ -7,40 +7,55 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th class="col-md-2">Table</th>
-          <th class="col-md-4">Foods</th>
-          <th class="col-md-4">Drinks</th>
-          <th class="col-md-2" colspan="2"></th>
+          <th class="col-md-1">Table</th>
+          <th class="col-md-2">Foods</th>
+          <th class="col-md-2"></th>
+          <th class="col-md-2">Drinks</th>
+          <th class="col-md-2"></th>
+          <th class="col-md-2">Grand total</th>
+          <th class="col-md-1" colspan="2"></th>
         </tr>
       </thead>
 
       <tbody>
-        
+
           <% @orders.each do |order| %>
             <% if order.foods_orders.first.try(:status) == 0 || order.drinks_orders.first.try(:status) == 0 %>
               <tr>
                 <td><%= order.table_number %></td>
                 <td>
-                  <% order.foods_orders.each do |c| %>
+                  <% order.foods_orders.each do |f| %>
                     <p>
-                      <%= c.quantity %>x <%= c.food.try(:name) %>
-                      <% if c.takeaway == true %>
+                      $<%= f.food.try(:price)%>&nbsp;&nbsp;<%= f.quantity %>x <%= f.food.try(:name) %>
+                      <% if f.takeaway == true %>
                         <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                       <% end %>
                     </p>
                   <% end %>
                 </td>
                 <td>
+                  <strong>Food total:<br>
+                  </strong>$<%= order.food_total %>
+                </td>
+                <td>
                   <% order.drinks_orders.each do |d| %>
                     <p>
-                      <%= d.quantity %>x <%= d.drink.try(:name) %>
+                      $<%= d.drink.try(:price)%>&nbsp;&nbsp;<%= d.quantity %>x <%= d.drink.try(:name) %>
                       <% if d.takeaway == true %>
                         <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                       <% end %>
                     </p>
                   <% end %>
                 </td>
+                <td>
+                  <strong>Drink total:<br>
+                  </strong>$<%= order.drink_total %>
+                </td>
+                <td><h3><strong>$<%= order.food_total + order.drink_total %></strong></h3></td>
                 <td><%#= link_to 'Show', order, class: "btn btn-primary" %></td>
+                <td class="vert-align"><%= link_to order_path(order), class: "btn btn-success" do %>
+                  Generate Bill <i class="fa fa-check"></i><% end %>
+                </td>
                 <% if can? :edit, Order %>
                   <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-primary btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
                 <% end %>
@@ -50,7 +65,7 @@
               </tr>
             <% end %>
           <% end %>
-        
+
       </tbody>
     </table>
   </div>
