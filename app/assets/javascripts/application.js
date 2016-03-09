@@ -17,3 +17,13 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
+
+$("#orders_table").DataTable({
+  // "order": [[ 0, "asc" ]],
+  responsive: true,
+  "pageLength": 8,
+  columnDefs: [
+    { responsivePriority: 1, targets: 0 },
+    { responsivePriority: 2, targets: -1 }
+  ]
+});

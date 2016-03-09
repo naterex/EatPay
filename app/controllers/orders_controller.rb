@@ -13,6 +13,9 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def landing
+  end
+
   # GET /orders/1
   # GET /orders/1.json
   def show
@@ -109,6 +112,8 @@ class OrdersController < ApplicationController
         drink_total += order.drink.price
       end
       @order.drink_total = drink_total
+
+      @order.grand_total = food_total + drink_total
     end
 
     def set_order
