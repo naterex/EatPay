@@ -1,0 +1,37 @@
+<h2>
+  Payment for table: #<%= @order.table_number %>
+</h2>
+
+<div class="col-sm-10 col-md-8 col-lg-6">
+
+  <%= form_for([@order, @payment]) do |form| %>
+
+    <h3>Amount due: <span class="label label-danger">$<%= @order.grand_total %></span></h3>
+    <br>
+    <h4>Select one option below:</h4>
+    <br>
+    <div id="dropin"></div>
+
+    <%= form.hidden_field :amount, value: @order.grand_total %>
+    <%= form.submit "Confirm credit card or Paypal payment", class: "btn btn-success btn-lg" %>
+  <%end%>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <%= form_for([@order, @payment]) do |form| %>
+    <%= form.hidden_field :amount, value: @order.grand_total %>
+    <%= form.hidden_field :payment_type, value: "cash" %>
+
+    <%= form.submit "Pay $#{@order.grand_total} via cash", class: "btn btn-warning btn-lg" %>
+  <% end %>
+
+</div>
+
+<% content_for :javascript do %>
+
+  <script type="text/javascript" src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+<% end %>
