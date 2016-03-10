@@ -127,12 +127,9 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:table_number, foods_orders_attributes: [:id, :quantity, :takeaway, :status, :food_id, :_destroy], drinks_orders_attributes: [:id, :quantity, :takeaway, :status, :drink_id, :_destroy])
     end
 
-<<<<<<< HEAD
     def qr_code_params
       params.permit(:id)
     end
-=======
->>>>>>> master
 end
 
 # order = Order.find(qr_code_params[:id])
