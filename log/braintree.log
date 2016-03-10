@@ -1,1 +1,144 @@
 # Logfile created on 2016-03-09 18:59:15 +0800 by logger.rb/47272
+D, [2016-03-09T21:12:21.515712 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:12:21 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T21:12:21.515873 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T21:12:21.889529 #75134]  INFO -- : [Braintree] [09/Mar/2016 13:12:21 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T21:12:21.889588 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:12:21 UTC] 201 Created
+D, [2016-03-09T21:12:21.889907 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJlOWZmOGFjZjJjM2JjODMyNjMwZmFiZTQ3OWMzYzgzMWZiNGQ4NzMxMDg5YzIzNjg2ODMyMzQ2MjQzNTAzYTU2fGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzowNDozNi41MDY5NjIwNTMrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-09T21:13:27.007492 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:13:27 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T21:13:27.007575 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T21:13:27.404718 #75134]  INFO -- : [Braintree] [09/Mar/2016 13:13:27 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T21:13:27.404790 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:13:27 UTC] 201 Created
+D, [2016-03-09T21:13:27.405164 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiIzZjk1MGNjNmY3NmJhNmI2MTJlMGEyYjFlODg1MWIxMTdmY2NkYjY2ZWRlMjQ1ZmRjZDA5YTlkYzU1NTNjNzZifGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzowNTo0MS45ODgyMzQ3ODkrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-09T21:31:38.896475 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:31:38 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T21:31:38.896943 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T21:31:39.312575 #75134]  INFO -- : [Braintree] [09/Mar/2016 13:31:39 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T21:31:39.312640 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:31:39 UTC] 201 Created
+D, [2016-03-09T21:31:39.312857 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiIyYjMyMWYzMTU0YzJlNWQxM2Q2NTJmZWM1MjE2OWVmMDQyNDE2YzcxNTYzNDY3NjI0YWFmMmM2NTVkZDhiOTYxfGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzoyMzo1My45NTk4ODE0MDkrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-09T21:36:04.803576 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:36:04 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T21:36:04.805058 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T21:36:05.169442 #75134]  INFO -- : [Braintree] [09/Mar/2016 13:36:05 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T21:36:05.170209 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:36:05 UTC] 201 Created
+D, [2016-03-09T21:36:05.171330 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiIyODljOTY1Mjg2ZDY3ZmJhMzY1MWI1Zjk4ZTdjM2Y0NjFiOGZlM2IyZWNmYjc3YzEwYTc1Y2I2OTQzNjFiZmZhfGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzoyODoxOS44Mzg1ODgxNTkrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-09T21:40:06.931165 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:40:06 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T21:40:06.931944 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T21:40:07.313971 #75134]  INFO -- : [Braintree] [09/Mar/2016 13:40:07 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T21:40:07.314260 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:40:07 UTC] 201 Created
+D, [2016-03-09T21:40:07.314730 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiI0Zjg1NDZhZDk4NDU4MWEyNmRkZjAzMDQ2ZWVlMmUwOTk4MGQzOTIwMDllYzYyOTIxZDI2ZDNlNGY0NmQzNmM3fGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzozMjoyMi4wMDQ3MjU2NDArMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-09T21:45:16.183516 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:45:16 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T21:45:16.183832 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T21:45:16.555573 #75134]  INFO -- : [Braintree] [09/Mar/2016 13:45:16 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T21:45:16.555966 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:45:16 UTC] 201 Created
+D, [2016-03-09T21:45:16.556584 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJmODU3NGU1ZjdmZGE3ODk4OTQwYzE4NDYxZWUyZjgzMTRiOWVkOTllYWQ1YWRiZWJkZDlmNmFhOGY0OWFlMzA4fGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzozNzozMS4yNDA4OTA4NDkrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-09T21:50:43.589794 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:50:43 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T21:50:43.590072 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T21:50:43.971725 #75134]  INFO -- : [Braintree] [09/Mar/2016 13:50:43 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T21:50:43.972154 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:50:43 UTC] 201 Created
+D, [2016-03-09T21:50:43.972810 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJmNzcyNWE0MzI1NGYzYWNlNTc5ZTNhMTZjYTY1MDAzNmEwMGE1NjQ1NDdkY2QzODdlNGFhMDRhN2U4MjQ2ZTAwfGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzo0Mjo1OC42OTE1NzEwNTErMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-09T21:51:07.251619 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:51:07 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T21:51:07.252305 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T21:51:07.654048 #75134]  INFO -- : [Braintree] [09/Mar/2016 13:51:07 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T21:51:07.654509 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:51:07 UTC] 201 Created
+D, [2016-03-09T21:51:07.655281 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiIzZTZjZGRkNWM2Njc1M2FiYTc1Y2MwZTZkNmExZmRmMWE1NWE0ZjQyYjk5N2RmODdhYTFmNDA5MTZhZDJlYTE1fGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzo0MzoyMi4zNTEwMDU1NjMrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-09T21:51:26.971285 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:51:26 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T21:51:26.971949 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T21:51:27.251957 #75134]  INFO -- : [Braintree] [09/Mar/2016 13:51:27 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T21:51:27.252688 #75134] DEBUG -- : [Braintree] [09/Mar/2016 13:51:27 UTC] 201 Created
+D, [2016-03-09T21:51:27.253865 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJlMjZmNzcwYWM0YzliMzM4OWNjNWE5YWJhMjkxOTlkNzk5OThiODliZDU1NDk3YWE0ZmI0MjllM2E1YTJlOWYwfGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzo0Mzo0Mi4wMDc0MzM1OTArMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-09T22:04:48.150305 #75134] DEBUG -- : [Braintree] [09/Mar/2016 14:04:48 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-09T22:04:48.151679 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-09T22:04:48.537276 #75134]  INFO -- : [Braintree] [09/Mar/2016 14:04:48 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-09T22:04:48.537646 #75134] DEBUG -- : [Braintree] [09/Mar/2016 14:04:48 UTC] 201 Created
+D, [2016-03-09T22:04:48.538326 #75134] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJhNjBlYzczZjE5Mjk1MjgxYTRmZmJmMzAyNmFlMzQ4N2Y3NmEzYWM3NzU4MDQ1ZDIxMTEzYmIzMDRiY2U4NjdifGNyZWF0ZWRfYXQ9MjAxNi0wMy0wOVQxMzo1NzowMy4yNjczMDQ0MzgrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
+D, [2016-03-10T12:45:01.621716 #62954] DEBUG -- : [Braintree] [10/Mar/2016 04:45:01 UTC] POST /merchants/jdgq37gyz52zc98n/client_token
+D, [2016-03-10T12:45:01.621863 #62954] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <version type="integer">2</version>
+[Braintree] </client-token>
+
+I, [2016-03-10T12:45:02.553379 #62954]  INFO -- : [Braintree] [10/Mar/2016 04:45:02 UTC] POST /merchants/jdgq37gyz52zc98n/client_token 201
+D, [2016-03-10T12:45:02.553448 #62954] DEBUG -- : [Braintree] [10/Mar/2016 04:45:02 UTC] 201 Created
+D, [2016-03-10T12:45:02.554527 #62954] DEBUG -- : [Braintree] <?xml version="1.0" encoding="UTF-8"?>
+[Braintree] <client-token>
+[Braintree]   <value>eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiI3NTUxMGRmNjJkMDkxYjM2OGU2NzgzZTFjMzM3MDM5ODRiOTY0NDRkNzY0N2Y4MWEwN2JjZjY0YTk3MjViNGU0fGNyZWF0ZWRfYXQ9MjAxNi0wMy0xMFQwNDozNzoxNC4zMDYzNDc1OTIrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWpkZ3EzN2d5ejUyemM5OG5cdTAwMjZwdWJsaWNfa2V5PW5jbm1tZmJiZ3NqOXFoNGoiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvamRncTM3Z3l6NTJ6Yzk4bi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL2pkZ3EzN2d5ejUyemM5OG4vY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOmZhbHNlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJQcmltZXNpdGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJwcmltZXNpdGUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImpkZ3EzN2d5ejUyemM5OG4iLCJ2ZW5tbyI6Im9mZiJ9</value>
+[Braintree] </client-token>
+
