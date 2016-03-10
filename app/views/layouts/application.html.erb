@@ -38,23 +38,26 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	      <% if can? :manage, Order %>
-	      	<li><%= link_to orders_path, data: { no_turbolink: true } do %>Orders <i class="fa fa-bars"></i><% end %></li>
+	      	<li><%= link_to orders_path, data: { no_turbolink: true } do %>Open Orders <i class="fa fa-bars"></i><% end %></li>
 	      <% end %>
-        	<% if can? :update_foods_status, Order %>
-        		<li><%= link_to kitchen_foods_path do %>Foods Orders <i class="fa fa-cutlery"></i><% end %></li>
-        	<% end %>
-        	<% if can? :update_drinks_status, Order %>
-        		<li><%= link_to kitchen_drinks_path do %>Drinks Orders <i class="fa fa-coffee"></i><% end %></li>
-        	<% end %>
-        	<% if can? :manage, User %>
-        		<li><%= link_to users_url do %>Manage Users <i class="fa fa-users"></i><% end %></li>
-        	<% end %>
-        		<% if can? :manage, Food %>
-        	  	<li><%= link_to foods_url do %>Manage Foods <i class="fa fa-lemon-o"></i><% end %></li>
-        	  <% end %>
-        	  <% if can? :manage, Drink %>
-        	  	<li><%= link_to drinks_url do %>Manage Drinks <i class="fa fa-glass"></i><% end %></li>
-        	  <% end %>
+        <% if can? :manage, Order %>
+          <li><%= link_to closed_orders_path, data: { no_turbolink: true } do %>Closed Orders <i class="fa fa-bars"></i><% end %></li>
+        <% end %>
+      	<% if can? :update_foods_status, Order %>
+      		<li><%= link_to kitchen_foods_path do %>Foods Orders <i class="fa fa-cutlery"></i><% end %></li>
+      	<% end %>
+      	<% if can? :update_drinks_status, Order %>
+      		<li><%= link_to kitchen_drinks_path do %>Drinks Orders <i class="fa fa-coffee"></i><% end %></li>
+      	<% end %>
+      	<% if can? :manage, User %>
+      		<li><%= link_to users_url do %>Manage Users <i class="fa fa-users"></i><% end %></li>
+      	<% end %>
+      		<% if can? :manage, Food %>
+      	  	<li><%= link_to foods_url do %>Manage Foods <i class="fa fa-lemon-o"></i><% end %></li>
+      	  <% end %>
+      	  <% if can? :manage, Drink %>
+      	  	<li><%= link_to drinks_url do %>Manage Drinks <i class="fa fa-glass"></i><% end %></li>
+      	  <% end %>
 	      </ul>
 
 	      <ul class="nav navbar-nav navbar-right">
