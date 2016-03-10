@@ -22,7 +22,9 @@
           <th class="col-md-2">Drinks</th>
           <th class="col-md-1">Drink total</th>
           <th class="col-md-2">Grand total</th>
-          <th class="col-md-1 no-sort"></th>
+          <% if can? :manage, Order %>
+            <th class="col-md-1 no-sort"></th>
+          <% end %>
           <% if can? :edit, Order %>
             <th class="col-md-1 no-sort"></th>
           <% end %>
@@ -67,9 +69,11 @@
                 <td>
                   <h4><strong>$<%= order.grand_total %></strong></h4>
                 </td>
-                <td class="vert-align"><%= link_to order_path(order), class: "btn btn-success btn-sm" do %>
-                  Generate Bill <i class="fa fa-credit-card"></i><% end %>
-                </td>
+                <% if can? :manage, Order %>
+                  <td class="vert-align"><%= link_to order_path(order), class: "btn btn-success btn-sm" do %>
+                    Generate Bill <i class="fa fa-credit-card"></i><% end %>
+                  </td>
+                <% end %>
                 <% if can? :edit, Order %>
                   <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-primary btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
                 <% end %>
