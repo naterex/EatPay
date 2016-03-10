@@ -8,7 +8,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.where("paid = ?", false)
+  end
+
+  def closed
+    @orders = Order.where("paid = ?", true)
   end
 
   def landing
@@ -110,4 +114,5 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:table_number, foods_orders_attributes: [:id, :quantity, :takeaway, :status, :food_id, :_destroy], drinks_orders_attributes: [:id, :quantity, :takeaway, :status, :drink_id, :_destroy])
     end
+
 end

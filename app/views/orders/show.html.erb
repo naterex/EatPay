@@ -1,13 +1,12 @@
-
-<h1>
-  <%= @order.table_number %>
-</h1>
+<h2>
+  Table: #<%= @order.table_number %>
+</h2>
 
 <% if @order.foods_orders.present? %>
   <h3>Foods: </h3>
   <ul>
-    <% @order.foods_orders.each do |co| %> 
-      <li><%= co.food.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%> | Takeaway: 
+    <% @order.foods_orders.each do |co| %>
+      <li><%= co.food.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%> | Takeaway:
         <% if co.takeaway == true %>
           Yes
           <% else %>
@@ -17,11 +16,11 @@
     <% end %>
   </ul>
 <% end %>
-  
+
 <% if @order.drinks_orders.present? %>
 <h3>Drinks: </h3>
   <ul>
-    <% @order.drinks_orders.each do |co| %> 
+    <% @order.drinks_orders.each do |co| %>
       <li><%= co.drink.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%> | Takeaway:
         <% if co.takeaway == true %>
           Yes
@@ -32,6 +31,15 @@
     <% end %>
   </ul>
 <% end %>
+<br>
+<br>
+<% if @order.paid? %>
+  <h4>Order: #<%= @order.id %> <span class="label label-success">payment complete</span> via <span class="label label-warning"><%= @order.payment.payment_type %></span> on <%= @order.payment.updated_at.to_date %> at <%= @order.payment.updated_at.to_s(:time) %></h4>
+<% else %>
+  <%= link_to 'Edit', edit_order_path(@order), class: "btn btn-warning" %> |
+  <%= link_to 'Back', orders_path, class: "btn btn-default" %>
+  <br>
+  <br>
+  <%= link_to "Pay $#{@order.grand_total} now", new_order_payment_path(@order), class: "btn btn-success btn-lg" %>
+<% end %>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>

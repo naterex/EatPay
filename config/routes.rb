@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   root "orders#index"
   # root "orders#landing"
 
-  resources :orders
+  resources :orders do
+    resources :payments, only: [:new, :create]
+    collection do
+      get 'closed', action: :closed
+    end
+  end
+
   resources :drinks
   resources :foods
   resources :users
