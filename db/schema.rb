@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309110805) do
+ActiveRecord::Schema.define(version: 20160310050736) do
 
   create_table "drinks", force: :cascade do |t|
     t.string   "name"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160309110805) do
     t.string   "card"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "amount"
   end
 
   add_index "payments", ["order_id"], name: "index_payments_on_order_id", unique: true
