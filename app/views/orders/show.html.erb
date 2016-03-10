@@ -40,6 +40,7 @@
   <%= link_to 'Back', orders_path, class: "btn btn-default" %>
   <br>
   <br>
+  <br>
   <table class="qr-code">
   <% @qr.modules.each_index do |x| %>
     <tr>
@@ -53,5 +54,7 @@
     </tr>
   <% end %>
   </table>
+  <br>
+  <br>
   <%= link_to "Pay $#{@order.grand_total} now", new_order_payment_path(@order), class: "btn btn-success btn-lg" %>
 <% end %>
