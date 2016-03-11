@@ -52,10 +52,11 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 # get your Rails variables in your js
 gem 'gon', '~> 6.0', '>= 6.0.1'
 
+# use postgres for DB
+gem 'pg'
+
 group :development, :test do
   gem 'pry-rails'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -68,6 +69,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg',             '0.17.1'
-  gem 'rails_12factor', '0.0.2'
+  # gem 'pg',             '0.17.1'
+  # gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor'
 end
