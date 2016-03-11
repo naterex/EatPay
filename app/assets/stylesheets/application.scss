@@ -41,7 +41,7 @@
  @media (max-width: 768px) {
  /* add some space in left side of nav button in mobile */
  	.new-order-btn{
- 		padding-left: 15px;
+ 		/*padding-left: 15px;*/
  	}
  }
 
@@ -62,8 +62,8 @@ table.qr-code td {
   border-collapse: collapse;
   padding: 0;
   margin: 0;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
 }
 table.qr-code td.black { background-color: #000; }
 table.qr-code td.white { background-color: #fff; }
@@ -71,4 +71,29 @@ table.qr-code td.white { background-color: #fff; }
 li {
   list-style-type: none;
 }
+
+/*td {
+  border-bottom: 1px solid #cecfd5;
+  padding: 10px 15px;
+}*/
+
+.border-solid {
+  border: 2px solid #9799a7;
+  
+}
+
+code {
+  background: #eaeaed;
+  color: #666;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  display: inline-block;
+  height: 985px;
+  margin: auto;
+  padding-top: 20px;
+  text-align: center;
+  width: 600px;
+
+}
+
+
     

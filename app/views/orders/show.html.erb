@@ -1,3 +1,5 @@
+<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+  <code class="border-solid">
     <div class="tcenter">
       <h1><u>Receipt</u></h1>
     </div>
@@ -11,7 +13,7 @@
       <h3>Foods: </h3>
       <ul>
         <% @order.foods_orders.each do |co| %>
-          <li><%= co.food.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%> | Takeaway:
+          <td><li><%= co.food.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%> | Takeaway:
             <% if co.takeaway == true %>
               Yes
               <% else %>
@@ -21,6 +23,7 @@
         <% end %>
       </ul>
     <% end %>
+  </td>
   </div>
   <br>
   <div class="tcenter">
@@ -41,18 +44,18 @@
 <br>
 <br>
 <div class="tcenter">
-  <h3> Grand Total: </h3><h4>$<%= @order.grand_total %></h4>
+  <h3> Grand Total: </h3><h3><strong><u>$<%= @order.grand_total %></u></strong></h3>
 </div>
 <br>
 <br>
 <% if @order.paid? %>
   <h4>Order: #<%= @order.id %> <span class="label label-success">payment complete</span> via <span class="label label-warning"><%= @order.payment.payment_type %></span> on <%= @order.payment.updated_at.to_date %> at <%= @order.payment.updated_at.to_s(:time) %></h4>
 <% else %>
-  <%= link_to 'Edit', edit_order_path(@order), class: "btn btn-warning btn-sm" %> |
-  <%= link_to 'Back', orders_path, class: "btn btn-default btn-sm" %>
-  <br>
-  <br>
-  <p> Please Scan this QR Code to pay.</p>
+ <!--  <%= link_to 'Edit', edit_order_path(@order), class: "btn btn-warning btn-sm" %> |
+  <%= link_to 'Back', orders_path, class: "btn btn-default btn-sm" %> -->
+  <!-- <br>
+  <br> -->
+  <p><u> Please scan this QR Code to pay. </u></p>
   <table class="qr-code">
   <% @qr.modules.each_index do |x| %>
     <tr>
@@ -65,4 +68,12 @@
     <% end %>
   <% end %>
 <% end %>
+</table>
+<br>
+</div>
+
+<%= link_to "Pay $#{@order.grand_total} now", new_order_payment_path(@order), class: "btn btn-success btn-lg" %>
+</code>
+</div>
+
 
