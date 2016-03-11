@@ -11,6 +11,10 @@ Role.where(name: "Manager").first_or_create
 Role.where(name: "Waiter").first_or_create
 Role.where(name: "Chef").first_or_create
 
+User.destroy_all
+Food.destroy_all
+Drink.destroy_all
+
 
 User.create!(
   email: "admin@payeat.com",
