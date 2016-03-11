@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160310083919) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "drinks", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160310083919) do
     t.integer  "price"
   end
 
-  add_index "drinks", ["name"], name: "index_drinks_on_name", unique: true
+  add_index "drinks", ["name"], name: "index_drinks_on_name", unique: true, using: :btree
 
   create_table "drinks_orders", force: :cascade do |t|
     t.integer  "drink_id"
@@ -39,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160310083919) do
     t.integer  "price"
   end
 
-  add_index "foods", ["name"], name: "index_foods_on_name", unique: true
+  add_index "foods", ["name"], name: "index_foods_on_name", unique: true, using: :btree
 
   create_table "foods_orders", force: :cascade do |t|
     t.integer  "food_id"
@@ -69,7 +72,7 @@ ActiveRecord::Schema.define(version: 20160310083919) do
     t.integer  "amount"
   end
 
-  add_index "payments", ["order_id"], name: "index_payments_on_order_id", unique: true
+  add_index "payments", ["order_id"], name: "index_payments_on_order_id", unique: true, using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -93,7 +96,7 @@ ActiveRecord::Schema.define(version: 20160310083919) do
     t.string   "role_id"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
