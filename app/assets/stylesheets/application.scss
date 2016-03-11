@@ -52,6 +52,7 @@
   border-color: #0000ff;
   border-collapse: collapse;
   text-align: center;
+  margin: 0 auto;
 }
 
 table.qr-code td {
@@ -66,3 +67,8 @@ table.qr-code td {
 }
 table.qr-code td.black { background-color: #000; }
 table.qr-code td.white { background-color: #fff; }
+
+li {
+  list-style-type: none;
+}
+    
