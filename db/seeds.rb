@@ -11,140 +11,144 @@ Role.where(name: "Manager").first_or_create
 Role.where(name: "Waiter").first_or_create
 Role.where(name: "Chef").first_or_create
 
+User.destroy_all
+Food.destroy_all
+Drink.destroy_all
+
 
 User.create!(
   email: "admin@payeat.com",
-  encrypted_password: "12345678",
+  password: "12345678",
   sign_in_count: 0,
   role_id: "1"
 )
 
 User.create!(
   email: "manager@payeat.com",
-  encrypted_password: "12345678",
+  password: "12345678",
   sign_in_count: 0,
   role_id: "2"
 )
 
 User.create!(
   email: "waiter@payeat.com",
-  encrypted_password: "12345678",
+  password: "12345678",
   sign_in_count: 0,
   role_id: "3"
 )
 
 User.create!(
   email: "chef@payeat.com",
-  encrypted_password: "12345678",
+  password: "12345678",
   sign_in_count: 0,
   role_id: "4"
 )
 
 User.create!(
   email: "nate@cheapeats.com",
-  encrypted_password: "12345678"
+  password: "12345678",
   sign_in_count: 0,
   role_id: "1"
 )
 
 # 10 Food items
-Food.create!{
+Food.create!(
   name: "Nasi Lemak",
   price: 10
-}
+)
 
-Food.create!{
+Food.create!(
   name: "Nasi Ayam",
   price: 8
-}
+)
 
-Food.create!{
+Food.create!(
   name: "Pork Noodle",
   price: 7
-}
+)
 
-Food.create!{
+Food.create!(
   name: "Chicken Chop",
   price: 14
-}
+)
 
-Food.create!{
+Food.create!(
   name: "Burger Ayam",
   price: 9
-}
+)
 
-Food.create!{
+Food.create!(
   name: "Kebab",
   price: 5
-}
+)
 
-Food.create!{
+Food.create!(
   name: "Bak Kut Teh",
   price: 25
-}
+)
 
-Food.create!{
+Food.create!(
   name: "Chao Kuey Teow",
   price: 6
-}
+)
 
-Food.create!{
+Food.create!(
   name: "Rojak",
   price: 4
-}
+)
 
-Food.create!{
+Food.create!(
   name: "Yong Tau Foo",
   price: 8
-}
+)
 
 # 10 Drink item
-Drink.create!{
+Drink.create!(
   name: "Teh Ais",
   price: 3
-}
+)
 
-Drink.create!{
+Drink.create!(
   name: "Milo Ais",
   price: 5
-}
+)
 
-Drink.create!{
+Drink.create!(
   name: "Sirap Limau",
   price: 5
-}
+)
 
-Drink.create!{
+Drink.create!(
   name: "Orange Juice",
   price: 7
-}
+)
 
-Drink.create!{
+Drink.create!(
   name: "Tequila ",
   price: 3
-}
+)
 
-Drink.create!{
+Drink.create!(
   name: "Asahi Beer",
   price: 8
-}
+)
 
-Drink.create!{
+Drink.create!(
   name: "Sky Juice",
   price: 2
-}
+)
 
-Drink.create!{
+Drink.create!(
   name: "Kopi O",
   price: 4
-}
+)
 
-Drink.create!{
+Drink.create!(
   name: "Red Wine",
   price: 23
-}
+)
 
-Drink.create!{
+Drink.create!(
   name: "Cane Juice",
   price: 4
-}
+)
