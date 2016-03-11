@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309063401) do
+ActiveRecord::Schema.define(version: 20160310083919) do
 
   create_table "drinks", force: :cascade do |t|
     t.string   "name"
@@ -53,12 +53,23 @@ ActiveRecord::Schema.define(version: 20160309063401) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "table_number"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "food_total"
     t.integer  "drink_total"
     t.integer  "grand_total"
+    t.boolean  "paid",         default: false
   end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "payment_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "amount"
+  end
+
+  add_index "payments", ["order_id"], name: "index_payments_on_order_id", unique: true
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

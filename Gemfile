@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.3'
 
+gem 'rqrcode-with-patches', '~> 0.5.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
@@ -43,6 +44,13 @@ gem 'bootstrap-select-rails'
 
 # encode QR codes
 gem 'rqrcode', '~> 0.10.1'
+
+# braintree payments
+gem 'braintree', '~> 2.58'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+
+# get your Rails variables in your js
+gem 'gon', '~> 6.0', '>= 6.0.1'
 
 group :development, :test do
   gem 'pry-rails'

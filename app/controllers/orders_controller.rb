@@ -8,7 +8,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.where("paid = ?", false)
+  end
+
+  def closed
+    @orders = Order.where("paid = ?", true)
   end
 
   def landing
@@ -17,6 +21,17 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    # order = Order.find(qr_code_params[:id])
+    # new_order_payment_url = "http://localhost:3000"
+    # new_order_payment_url(order) # => http://localhost:3000/orders/2/payments/new
+    @qr = RQRCode::QRCode.new("http://localhost:3000/orders/#{@order.id}/payments/new", size: 5)
+    # @qr = RQRCode::QRCode.new(params[:id], size: 1)
+
+
+    # order = Order.find(qr_code_params[:id])
+    # new_order_payment_url(order) # => http://localhost:3000/orders/2/payments/new
+    # @qr = RQRCode::QRCode.new(qr_code_params[:word], size: 1)
+
   end
 
   def order_success
@@ -35,6 +50,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+
     @order.calculate_total
 
     respond_to do |format|
@@ -110,4 +126,12 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:table_number, foods_orders_attributes: [:id, :quantity, :takeaway, :status, :food_id, :_destroy], drinks_orders_attributes: [:id, :quantity, :takeaway, :status, :drink_id, :_destroy])
     end
+
+    def qr_code_params
+      params.permit(:id)
+    end
 end
+
+# order = Order.find(qr_code_params[:id])
+    # new_order_payment_url(order) # => http://localhost:3000/orders/2/payments/new
+    # @qr = RQRCode::QRCode.new(new_order_payment_url(order), size: 1)
