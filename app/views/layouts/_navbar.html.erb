@@ -13,65 +13,32 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-      <% if can? :manage, Order %>
-        <li><%= link_to orders_path, data: { no_turbolink: true } do %>Open Orders <i class="fa fa-bars"></i><% end %></li>
-      <% end %>
-      <% if can? :manage, Order %>
-        <li><%= link_to closed_orders_path, data: { no_turbolink: true } do %>Closed Orders <i class="fa fa-bars"></i><% end %></li>
-      <% end %>
-      <% if can? :update_foods_status, Order %>
-        <li><%= link_to kitchen_foods_path do %>Foods Orders <i class="fa fa-cutlery"></i><% end %></li>
-      <% end %>
-      <% if can? :update_drinks_status, Order %>
-        <li><%= link_to kitchen_drinks_path do %>Drinks Orders <i class="fa fa-coffee"></i><% end %></li>
-      <% end %>
-      <% if can? :manage, User %>
-        <li><%= link_to users_url do %>Manage Users <i class="fa fa-users"></i><% end %></li>
-      <% end %>
-        <% if can? :manage, Food %>
-          <li><%= link_to foods_url do %>Manage Foods <i class="fa fa-lemon-o"></i><% end %></li>
-        <% end %>
-        <% if can? :manage, Drink %>
-          <li><%= link_to drinks_url do %>Manage Drinks <i class="fa fa-glass"></i><% end %></li>
-        <% end %>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-
       <% if current_user %>
+        <div class="col-sm-4 col-sm-offset-4">
+          <%= link_to '<i class="fa fa-plus"></i>&nbsp;&nbsp;New Order'.html_safe, new_order_url, class: "btn btn-primary navbar-btn" %>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
 
-        <li class="new-order-btn">
-          <form class="navbar-form navbar-left">
-            <% if can? :new, Order %>
-              <%= link_to new_order_url, class: "btn btn-primary" do %>New Order &nbsp;<i class="fa fa-plus"></i><% end %>
-            <% end %>
-          </form>
-        </li>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to user_path(current_user.id) do %><i class="fa fa-user"></i> My profile<% end %></li>
-            <li><%= link_to edit_user_registration_url do %><i class="fa fa-pencil-square-o"></i> Edit profile<% end %></li>
-            <li role="separator" class="divider"></li>
-            <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i> Logout<% end %></li>
-          </ul>
-        </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to user_path(current_user.id) do %><i class="fa fa-user"></i> My profile<% end %></li>
+              <li><%= link_to edit_user_registration_url do %><i class="fa fa-pencil-square-o"></i> Edit profile<% end %></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i> Logout<% end %></li>
+            </ul>
+          </li>
+        </ul>
         <% else %>
-          <li class="new-order-btn">
-          <form class="navbar-form navbar-left">
-            <%= link_to new_user_session_url, class: "btn btn-success" do %>
-              Log in <i class="fa fa-sign-in"></i>
-            <% end %>
-            <%= link_to new_user_registration_url, class: "btn btn-primary" do %>
-              Sign up <i class="fa fa-user-plus"></i>
-            <% end %>
-          </form>
-        </li>
+        <ul class="nav navbar-nav navbar-right">
+
+          <%= link_to '<i class="fa fa-sign-in"></i>&nbsp;&nbsp;Login'.html_safe,new_user_session_url, class: "btn btn-success navbar-btn" %>
+
+          <%= link_to '<i class="fa fa-user-plus"></i>&nbsp;&nbsp;Sign Up'.html_safe, new_user_registration_url, class: "btn btn-primary navbar-btn" %>
+        </ul>
       <% end %>
 
-      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
