@@ -18,7 +18,7 @@ default: &default
 development:
   <<: *default
   database: payeat_development
-  host: localhost
+  
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -32,10 +32,9 @@ development:
 test:
   <<: *default
   database: payeat_test
-  host: localhost
+  
 
 production:
   <<: *default
   database: payeat_production
-  username: ENV['PAYEAT_HEROKU_USERNAME']
-  password: ENV['PAYEAT_HEROKU_PASSWORD']
+  
