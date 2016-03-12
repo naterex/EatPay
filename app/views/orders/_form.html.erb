@@ -1,5 +1,4 @@
 <div class="row">
-  <div class="col-xs-12 col-md-12">
   <%= form_for(@order) do |f| %>
     <% if @order.errors.any? %>
       <div id="error_explanation">
@@ -22,7 +21,7 @@
       <%= render 'foods_order_fields', f: co %>
     <% end %>
     <%= link_to_add_fields "Add food", f, :foods_orders %>
-    
+
     <h4> Add Drinks</h4>
     <%= f.fields_for :drinks_orders do |co| %>
       <%= render 'drinks_order_fields', f: co %>
@@ -33,7 +32,6 @@
     <%= f.button :submit, class: "btn btn-primary" do %>Submit order <i class='fa fa-check'></i><% end %>
     &nbsp;
     <%= link_to 'Back', orders_path, class: "btn btn-default" %>
-    
+
   <% end %>
-  </div>
 </div>

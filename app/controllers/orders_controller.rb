@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
   load_and_authorize_resource
 
-  before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
+  before_action :authenticate_user!, only: [:show, :index, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
   before_action :set_order, only: [:show, :edit, :update, :destroy, :order_success]
 
   # GET /orders
