@@ -8,13 +8,22 @@ module ApplicationHelper
     	link_to(name, '#', class: "add_fields btn btn-primary", data: {id: id, fields: fields.gsub("\n", "")})
 	end
 
-	def flash_class(level)
-	    case level.to_sym
-		    when :notice then "alert alert-info"
-		    when :success then "alert alert-success"
-		    when :error then "alert alert-error"
-		    when :info then "alert alert-info"
-	    end
-	end
+	# def flash_class(level)
+	#     case level.to_sym
+	# 	    when :notice then "alert alert-info"
+	# 	    when :success then "alert alert-success"
+	# 	    when :error then "alert alert-error"
+	# 	    when :info then "alert alert-info"
+	#     end
+	# end
+
+  def alert_class_for(flash_type)
+    {
+      :success => 'alert-success',
+      :error => 'alert-danger',
+      :alert => 'alert-warning',
+      :notice => 'alert-info'
+    }[flash_type.to_sym] || flash_type.to_s
+  end
 
 end
