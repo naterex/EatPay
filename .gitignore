@@ -13,10 +13,10 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-!/log/.keep
-/tmp
 /log/development.log
 /log/braintree.log
+!/log/.keep
+/tmp
 
 # Ignore RubyMine folder
 /.idea
