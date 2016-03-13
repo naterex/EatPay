@@ -15,3 +15,8 @@
 /log/*
 !/log/.keep
 /tmp
+/log/development.log
+/log/braintree.log
+
+# Ignore RubyMine folder
+/.idea
