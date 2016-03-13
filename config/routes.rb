@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {registrations: 'registrations'}
-<<<<<<< HEAD
   
   root "orders#landing"
-=======
-
-  root "orders#index"
-  # root "orders#landing"
 
   resources :orders do
     resources :payments, only: [:new, :create]
@@ -15,7 +10,6 @@ Rails.application.routes.draw do
       get 'closed', action: :closed
     end
   end
->>>>>>> 9f3a7f1298fb31b1d51b2b1192c37313632f1979
 
   resources :drinks
   resources :foods
