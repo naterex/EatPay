@@ -1,0 +1,47 @@
+<% if current_user %>
+  <div id="wrapper">
+      <div class="overlay"></div>
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <ul class="nav sidebar-nav">
+          <li></li>
+          <% if can? :manage, Order %>
+            <li><%= link_to orders_path, data: { no_turbolink: true } do %><i class="fa fa-list"></i>&nbsp;&nbsp;Open Orders<% end %></li>
+          <% end %>
+          <% if can? :manage, Order %>
+            <li><%= link_to closed_orders_path, data: { no_turbolink: true } do %><i class="fa fa-check-square"></i>&nbsp;&nbsp;Closed Orders<% end %></li>
+          <% end %>
+          <% if can? :update_foods_status, Order %>
+            <li><%= link_to kitchen_foods_path do %><i class="fa fa-cutlery"></i>&nbsp;&nbsp;Food Orders<% end %></li>
+          <% end %>
+          <% if can? :update_drinks_status, Order %>
+            <li><%= link_to kitchen_drinks_path do %><i class="fa fa-coffee"></i>&nbsp;&nbsp;Drink Orders<% end %></li>
+          <% end %>
+          <% if can? :manage, User %>
+            <li><%= link_to users_url do %><i class="fa fa-users"></i>&nbsp;&nbsp;Users<% end %></li>
+          <% end %>
+            <% if can? :manage, Food %>
+            <li><%= link_to foods_url do %><i class="fa fa-lemon-o"></i>&nbsp;&nbsp;Foods<% end %></li>
+          <% end %>
+          <% if can? :manage, Drink %>
+            <li><%= link_to drinks_url do %><i class="fa fa-glass"></i>&nbsp;&nbsp;Drinks<% end %></li>
+          <% end %>
+
+        </ul>
+      </nav>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+          <span class="hamb-top"></span>
+          <span class="hamb-middle"></span>
+          <span class="hamb-bottom"></span>
+        </button>
+      </div>
+      <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+<% end %>
