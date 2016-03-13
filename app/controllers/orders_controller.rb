@@ -1,10 +1,6 @@
 class OrdersController < ApplicationController
-<<<<<<< HEAD
-  
-  skip_load_and_authorize_resource only: :landing
-=======
 
->>>>>>> 9f3a7f1298fb31b1d51b2b1192c37313632f1979
+  skip_load_and_authorize_resource only: :landing
   load_and_authorize_resource
 
   before_action :authenticate_user!, only: [:show, :index, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
