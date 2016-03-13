@@ -210,6 +210,8 @@ fieldset[disabled] .btn-xl.active {
     font-weight: 400;
     letter-spacing: 1px;
     color: #fff;
+    font-size: 1.1em;
+
 }
 
 .navbar-default .nav li a:hover,
@@ -265,8 +267,8 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../assets/header-bg-2.jpg);
-    background-position: center center;
+    background-image: url(../assets/header-bg.jpg);
+    background-position: center 60%;
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
