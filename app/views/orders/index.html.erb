@@ -39,9 +39,7 @@
                       <% end %>
                     </p>
                   <% end %>
-                </td>
-                <td><%#= link_to 'Show', order, class: "btn btn-primary" %></td>
-                <% if can? :edit, Order %>
+                 <% if can? :edit, Order %>
                   <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-primary btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
                 <% end %>
                 <% if can? :destroy, Order %>
@@ -50,7 +48,7 @@
               </tr>
             <% end %>
           <% end %>
-        
+           
       </tbody>
     </table>
   </div>

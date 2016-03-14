@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 
   before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
   before_action :set_order, only: [:show, :edit, :update, :destroy, :order_success]
-
+  require 'rqrcode_png'
   # GET /orders
   # GET /orders.json
   def index
@@ -102,4 +102,5 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:table_number, foods_orders_attributes: [:id, :quantity, :takeaway, :status, :food_id ,:_destroy], drinks_orders_attributes: [:id, :quantity, :takeaway, :status, :drink_id, :_destroy])
     end
+
 end

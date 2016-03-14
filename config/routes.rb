@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'qr_codes/new'
+
+  get 'qr_codes/create'
+
   devise_for :users, controllers: {registrations: 'registrations'}
   
   root "orders#index"
@@ -8,6 +12,7 @@ Rails.application.routes.draw do
   resources :drinks
   resources :foods
   resources :users
+  resources :qr_codes, only: [:new, :create]
   
   # link to change foods/drinks status from 0 (processing) to 1 (done)
   get '/orders/:id/update_foods_status',  to: 'orders#update_foods_status',   as: :update_foods_status
@@ -21,4 +26,5 @@ Rails.application.routes.draw do
 
   # order success page
   get '/orders/:id/success',  to: 'orders#order_success', as: :order_success
+  
 end
