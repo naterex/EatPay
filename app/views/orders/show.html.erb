@@ -116,10 +116,16 @@
       </table>
     </div><!-- row -->
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-4">
-        <% if @order.paid? %>
-          <h4>Order: #<%= @order.id %> <span class="label label-success">payment complete</span> via <span class="label label-warning"><%= @order.payment.payment_type %></span> on <br><br><%= @order.payment.updated_at.to_date %> at <%= @order.payment.updated_at.to_s(:time) %></h4>
-        <% else %>
+      <% if @order.paid? %>
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="text-center">
+            <h4>Order: #<%= @order.id %> <span class="label label-success">payment complete</span> via <span class="label label-warning"><%= @order.payment.payment_type %></span>
+            <br><br>
+            on <%= @order.payment.updated_at.to_date %> at <%= @order.payment.updated_at.to_s(:time) %></h4>
+          </div>
+        </div>
+      <% else %>
+        <div class="col-sm-6 col-sm-offset-4">
           <p>Please scan this QR Code to pay.</p>
           <table class="qr-code">
             <% @qr.modules.each_index do |x| %>
@@ -135,12 +141,12 @@
             <% end %>
           </table>
           <br>
-        <% end %><!-- if @order.paid? -->
+        </div>
+      </div><!-- row -->
+      <div class="row">
+        <%= link_to "Pay $#{@order.grand_total} now", new_order_payment_path(@order), class: "btn btn-success btn-lg btn-block" %>
       </div>
-    </div><!-- row -->
-    <div class="row">
-      <%= link_to "Pay $#{@order.grand_total} now", new_order_payment_path(@order), class: "btn btn-success btn-lg btn-block" %>
-    </div>
+    <% end %><!-- if @order.paid? -->
   </div><!-- well receipt -->
 </div><!-- row -->
 <br>
