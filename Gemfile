@@ -58,6 +58,7 @@ gem 'pg'
 
 # Use letter opener for email testing
 gem "letter_opener", :group => :development
+gem 'letter_opener_web', :group => :development
 
 group :development, :test do
   gem 'pry-rails'
