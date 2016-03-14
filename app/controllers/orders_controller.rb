@@ -24,7 +24,8 @@ class OrdersController < ApplicationController
     # order = Order.find(qr_code_params[:id])
     # new_order_payment_url = "http://localhost:3000"
     # new_order_payment_url(order) # => http://localhost:3000/orders/2/payments/new
-    @qr = RQRCode::QRCode.new("http://localhost:3000/orders/#{@order.id}/payments/new", size: 5)
+    payment = "http://localhost:3000/orders/#{@order.id}/payments/new"
+    @qr = RQRCode::QRCode.new( payment, size: 5)
     # @qr = RQRCode::QRCode.new(params[:id], size: 1)
 
 
