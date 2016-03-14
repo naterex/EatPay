@@ -28,7 +28,6 @@
 
 
 .navbar-brand {
-  color: white !important;
   font-weight: bold;
   font-size: 2.5rem;
 }
@@ -43,16 +42,12 @@
     vertical-align: middle;
 }
 
-/* text center */
-.tcenter {
-	text-align: center;
-}
 
- @media (max-width: 768px) {
- /* add some space in left side of nav button in mobile */
- 	.new-order-btn {
- 		padding-left: 15px;
- 	}
+@media (max-width: 768px) {
+/* add some space in left side of nav button in mobile */
+	.new-order-btn {
+		padding-left: 15px;
+	}
 }
 
 /* qr code */
@@ -82,6 +77,16 @@ table.qr-code td.white {
   background-color: #fff;
 }
 
+li {
+  list-style-type: none;
+}
+
+.receipt {
+  border: 2px solid #9799a7;
+  background: #eaeaed;
+  color: #666;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+}
 
 body {
     position: relative;
