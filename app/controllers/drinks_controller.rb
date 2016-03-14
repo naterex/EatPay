@@ -46,7 +46,7 @@ class DrinksController < ApplicationController
   def update
     respond_to do |format|
       if @drink.update(drink_params)
-        format.html { redirect_to drinks_path, flash: {info: "Drink was successfully updated."} }
+        format.html { redirect_to drinks_path, flash: {notice: "Drink was successfully updated."} }
         format.json { render :show, status: :ok, location: @drink }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class DrinksController < ApplicationController
   def destroy
     @drink.destroy
     respond_to do |format|
-      format.html { redirect_to drinks_url, flash: {info: "Drink was successfully destroyed."} }
+      format.html { redirect_to drinks_url, flash: {error: "Drink was successfully destroyed."} }
       format.json { head :no_content }
     end
   end

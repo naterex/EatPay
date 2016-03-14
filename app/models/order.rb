@@ -10,8 +10,8 @@ class Order < ActiveRecord::Base
 
   has_one :payment
 
-  validates_presence_of :food_total
-  validates_presence_of :drink_total
+  # validates_presence_of :food_total
+  # validates_presence_of :drink_total
 
   def calculate_total
 
