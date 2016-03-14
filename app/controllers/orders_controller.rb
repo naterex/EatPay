@@ -21,9 +21,6 @@ class OrdersController < ApplicationController
     @orders = Order.where("paid = ?", true)
   end
 
-  def landing
-  end
-
   # GET /orders/1
   # GET /orders/1.json
   def show

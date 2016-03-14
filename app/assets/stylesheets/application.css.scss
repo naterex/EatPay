@@ -17,6 +17,9 @@
 
 
  @import "bootstrap-sprockets";
+
+ @mixin box-shadow($none) { box-shadow: $none; }
+
  @import "bootswatch/flatly/variables";
  @import "bootstrap";
 
@@ -252,7 +255,7 @@ body, html {
     border-radius: 0;
     border: none;
     background-color: #222;
-    box-shadow: none;
+    z: none;
 }
 
 /*-------------------------------*/
