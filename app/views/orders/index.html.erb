@@ -1,46 +1,86 @@
+<% content_for :stylesheets do %>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.0.2/css/responsive.bootstrap.min.css"/>
+
+<% end %>
+
+
 <div class="row">
   <div class="col-md-12">
-    <h3>Orders</h3>
+    <h3>Open Orders</h3>
     <%= button_to "", { :onclick => "history.go(0)", :method => :get, class: 'btn btn-primary btn-sm' } do %>
       Refresh <i class="fa fa-refresh"></i>
     <% end %>
-    <table class="table table-striped">
+    <br>
+    <table class="table table-striped table-bordered dt-responsive nowrap" id="orders_table" cellspacing="10" width="100%">
       <thead>
         <tr>
-          <th class="col-md-2">Table</th>
-          <th class="col-md-4">Foods</th>
-          <th class="col-md-4">Drinks</th>
-          <th class="col-md-2" colspan="2"></th>
+          <th class="col-md-1">Table</th>
+          <th class="col-md-2">Foods</th>
+          <th class="col-md-1">Food total</th>
+          <th class="col-md-2">Drinks</th>
+          <th class="col-md-1">Drink total</th>
+          <th class="col-md-2">Grand total</th>
+          <% if can? :manage, Order %>
+            <th class="col-md-1 no-sort"></th>
+          <% end %>
+          <% if can? :edit, Order %>
+            <th class="col-md-1 no-sort"></th>
+          <% end %>
+          <% if can? :destroy, Order %>
+            <th class="col-md-1 no-sort"></th>
+          <% end %>
         </tr>
       </thead>
 
       <tbody>
-        
+
           <% @orders.each do |order| %>
             <% if order.foods_orders.first.try(:status) == 0 || order.drinks_orders.first.try(:status) == 0 %>
               <tr>
                 <td><%= order.table_number %></td>
                 <td>
-                  <% order.foods_orders.each do |c| %>
+                  <% order.foods_orders.each do |f| %>
                     <p>
-                      <%= c.quantity %>x <%= c.food.try(:name) %>
-                      <% if c.takeaway == true %>
+                      $<%= f.food.try(:price)%>&nbsp;&nbsp;<%= f.quantity %>x <%= f.food.try(:name) %>
+                      <% if f.takeaway == true %>
                         <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                       <% end %>
                     </p>
                   <% end %>
                 </td>
                 <td>
+                  <strong>$<%= order.food_total %></strong>
+                </td>
+                <td>
                   <% order.drinks_orders.each do |d| %>
                     <p>
-                      <%= d.quantity %>x <%= d.drink.try(:name) %>
+                      $<%= d.drink.try(:price)%>&nbsp;&nbsp;<%= d.quantity %>x <%= d.drink.try(:name) %>
                       <% if d.takeaway == true %>
                         <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                       <% end %>
                     </p>
                   <% end %>
+<<<<<<< HEAD
                  <% if can? :edit, Order %>
                   <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-primary btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
+=======
+                </td>
+                <td>
+                  <strong>$<%= order.drink_total %></strong>
+                </td>
+                <td>
+                  <strong>$<%= order.grand_total %></strong>
+                </td>
+                <% if can? :manage, Order %>
+                  <td class="vert-align"><%= link_to order_path(order), class: "btn btn-info btn-sm" do %>
+                    Generate Bill <i class="fa fa-credit-card"></i><% end %>
+                  </td>
+                <% end %>
+                <% if can? :edit, Order %>
+                  <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-warning btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
+>>>>>>> 9d6bd3fc3d55c23c2bc226d9f277e8d6cb5f1a14
                 <% end %>
                 <% if can? :destroy, Order %>
                   <td class="vert-align"><%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
@@ -48,8 +88,40 @@
               </tr>
             <% end %>
           <% end %>
+<<<<<<< HEAD
            
+=======
+
+>>>>>>> 9d6bd3fc3d55c23c2bc226d9f277e8d6cb5f1a14
       </tbody>
     </table>
   </div>
 </div>
+
+<% content_for :javascript do %>
+
+  <script type="text/javascript" src="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.0.2/js/responsive.bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+
+    $("#orders_table").DataTable({
+      "columnDefs": [ {
+        "targets"  : 'no-sort',
+        "orderable": false,
+      }],
+      responsive: true,
+      "pageLength": 8,
+      columnDefs: [
+        { responsivePriority: 1, targets: 0 },
+        { responsivePriority: 7, targets: -1 },
+        { responsivePriority: 8, targets: -2 },
+        { responsivePriority: 9, targets: -3 },
+      ]
+    });
+
+  </script>
+
+<% end %>

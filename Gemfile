@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
+ruby '2.2.3'
 
-ruby "2.2.3"
-
+gem 'rqrcode-with-patches', '~> 0.5.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
@@ -20,6 +20,7 @@ gem 'jquery-rails'
 
 # Twitter Bootstrap
 gem 'bootstrap-sass', '3.2.0.0'
+gem 'bootswatch-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -49,10 +50,18 @@ gem 'rqrcode-with-patches', '~> 0.5.4'
 
 #gem 'nokogiri', '1.6.7.2'
 
+# braintree payments
+gem 'braintree', '~> 2.58'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+
+# get your Rails variables in your js
+gem 'gon', '~> 6.0', '>= 6.0.1'
+
+# use postgres for DB
+gem 'pg'
+
 group :development, :test do
   gem 'pry-rails'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -65,6 +74,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg',             '0.17.1'
-  gem 'rails_12factor', '0.0.2'
+  # gem 'pg',             '0.17.1'
+  # gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor'
 end
