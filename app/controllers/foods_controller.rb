@@ -46,7 +46,7 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to foods_path, flash: {info: "Food was successfully updated."} }
+        format.html { redirect_to foods_path, flash: {notice: "Food was successfully updated."} }
         format.json { render :show, status: :ok, location: @food }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class FoodsController < ApplicationController
   def destroy
     @food.destroy
     respond_to do |format|
-      format.html { redirect_to foods_url, flash: {info: "Food was successfully destroyed."} }
+      format.html { redirect_to foods_url, flash: {error: "Food was successfully destroyed."} }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:name)
+      params.require(:food).permit(:name, :price)
     end
 end

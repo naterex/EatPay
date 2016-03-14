@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,17 +15,18 @@ class User < ActiveRecord::Base
 
 
   def set_default_user_role
+    return unless self.role.nil?
     self.role  = Role.where(name: "Waiter").first # waiter role
     self.save
   end
 
   def has_role?(role_name)
     self.role == Role.where(name: role_name).first
-  end 
+  end
 
   def add_role(role_name)
     role = Role.where(name: role_name).first
-    self.role = role unless  role.blank?
+    self.role = role unless role.blank?
   end
 
 end
