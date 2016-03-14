@@ -8,8 +8,13 @@
 *.rbc
 capybara-*.html
 .rspec
+!/log/.keep
+log/*
+/log/*
 /log
+tmp/*
 /tmp
+/tmp/*
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /public/system
@@ -44,11 +49,6 @@ bower.json
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
-/tmp
-
 ### OSX ###
 .DS_Store
 .AppleDouble
@@ -82,6 +82,7 @@ Temporary Items
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
+.idea/*
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/dictionaries

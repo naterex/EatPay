@@ -14,6 +14,9 @@ Role.where(name: "Chef").first_or_create
 User.destroy_all
 Food.destroy_all
 Drink.destroy_all
+FoodsOrder.destroy_all
+DrinksOrder.destroy_all
+Order.destroy_all
 
 
 User.create!(
@@ -152,3 +155,194 @@ Drink.create!(
   name: "Cane Juice",
   price: 4
 )
+
+o = Order.create!(
+  table_number: 1,
+  paid: false
+)
+FoodsOrder.create!(
+  order_id: 1,
+  food_id: 1,
+  quantity: 1,
+  status: 0,
+  takeaway: false
+)
+
+FoodsOrder.create!(
+  order_id: 1,
+  food_id: 2,
+  quantity: 2,
+  status: 0,
+  takeaway: false
+)
+
+FoodsOrder.create!(
+  order_id: 1,
+  food_id: 3,
+  quantity: 3,
+  status: 0,
+  takeaway: true
+)
+
+DrinksOrder.create!(
+  order_id: 1,
+  drink_id: 1,
+  quantity: 3,
+  status: 0,
+  takeaway: false
+)
+
+DrinksOrder.create!(
+  order_id: 1,
+  drink_id: 2,
+  quantity: 3,
+  status: 0,
+  takeaway: true
+)
+o.calculate_total
+o.save
+
+o = Order.create!(
+  table_number: 2,
+  paid: false
+)
+FoodsOrder.create!(
+  order_id: 2,
+  food_id: 4,
+  quantity: 1,
+  status: 0,
+  takeaway: false
+)
+
+FoodsOrder.create!(
+  order_id: 2,
+  food_id: 5,
+  quantity: 2,
+  status: 0,
+  takeaway: false
+)
+
+FoodsOrder.create!(
+  order_id: 2,
+  food_id: 6,
+  quantity: 3,
+  status: 0,
+  takeaway: false
+)
+
+DrinksOrder.create!(
+  order_id: 2,
+  drink_id: 3,
+  quantity: 3,
+  status: 0,
+  takeaway: false
+)
+
+DrinksOrder.create!(
+  order_id: 2,
+  drink_id: 4,
+  quantity: 3,
+  status: 0,
+  takeaway: false
+)
+o.calculate_total
+o.save
+
+o = Order.create!(
+  table_number: 3,
+  paid: true
+)
+FoodsOrder.create!(
+  order_id: 3,
+  food_id: 5,
+  quantity: 1,
+  status: 0,
+  takeaway: false
+)
+
+FoodsOrder.create!(
+  order_id: 3,
+  food_id: 6,
+  quantity: 1,
+  status: 0,
+  takeaway: false
+)
+
+DrinksOrder.create!(
+  order_id: 3,
+  drink_id: 5,
+  quantity: 1,
+  status: 0,
+  takeaway: false
+)
+
+DrinksOrder.create!(
+  order_id: 3,
+  drink_id: 6,
+  quantity: 1,
+  status: 0,
+  takeaway: false
+)
+o.calculate_total
+o.save
+
+Payment.create!(
+  order_id: 3,
+  payment_type: "cash",
+  amount: 25
+)
+
+
+o = Order.create!(
+  table_number: 4,
+  paid: true
+)
+FoodsOrder.create!(
+  order_id: 4,
+  food_id: 7,
+  quantity: 1,
+  status: 0,
+  takeaway: true
+)
+
+FoodsOrder.create!(
+  order_id: 4,
+  food_id: 8,
+  quantity: 1,
+  status: 0,
+  takeaway: true
+)
+
+DrinksOrder.create!(
+  order_id: 4,
+  drink_id: 7,
+  quantity: 1,
+  status: 0,
+  takeaway: true
+)
+
+DrinksOrder.create!(
+  order_id: 4,
+  drink_id: 8,
+  quantity: 1,
+  status: 0,
+  takeaway: true
+)
+o.calculate_total
+o.save
+
+Payment.create!(
+  order_id: 4,
+  payment_type: "credit_card",
+  amount: 37
+)
+
+# Order.skip_callback(:create, :before, :calculate_total)
+# Order.set_callback(:create, :before, :calculate_total)
+
+puts "#{User.count} users created"
+puts "#{Food.count} food items created"
+puts "#{Drink.count} drink items created"
+puts "#{FoodsOrder.count} foods_orders created"
+puts "#{DrinksOrder.count} drinks_orders created"
+puts "#{Order.count} orders created"
