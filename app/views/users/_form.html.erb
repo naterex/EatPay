@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-4 col-sm-offset-4">
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
@@ -20,7 +20,7 @@
     <%= f.label :role %><br>
     <%= f.select :role_id, options_for_select( Role.all.map { |role| [role.name, role.id] }, f.object.role_id), {}, {class: "form-control"} %>
 
-      
+
 
   </div>
 

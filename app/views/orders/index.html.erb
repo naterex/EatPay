@@ -67,15 +67,15 @@
                   <strong>$ <%= order.drink_total %></strong>
                 </td>
                 <td>
-                  <h4><strong>$<%= order.grand_total %></strong></h4>
+                  <strong>$<%= order.grand_total %></strong>
                 </td>
                 <% if can? :manage, Order %>
-                  <td class="vert-align"><%= link_to order_path(order), class: "btn btn-success btn-sm" do %>
+                  <td class="vert-align"><%= link_to order_path(order), class: "btn btn-info btn-sm" do %>
                     Generate Bill <i class="fa fa-credit-card"></i><% end %>
                   </td>
                 <% end %>
                 <% if can? :edit, Order %>
-                  <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-primary btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
+                  <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-warning btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
                 <% end %>
                 <% if can? :destroy, Order %>
                   <td class="vert-align"><%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
