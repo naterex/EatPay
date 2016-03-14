@@ -43,7 +43,7 @@
                 <td>
                   <% order.foods_orders.each do |f| %>
                     <p>
-                      $<%= f.food.try(:price)%>&nbsp;&nbsp;<%= f.quantity %>x <%= f.food.try(:name) %>
+                      $<%= f.food.try(:price)%>&nbsp;&nbsp;<%= f.food.try(:name) %> x <%= f.quantity %>
                       <% if f.takeaway == true %>
                         <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                       <% end %>
@@ -51,24 +51,20 @@
                   <% end %>
                 </td>
                 <td>
-                  <strong>$<%= order.food_total %></strong>
+                  <strong>$ <%= order.food_total %></strong>
                 </td>
                 <td>
                   <% order.drinks_orders.each do |d| %>
                     <p>
-                      $<%= d.drink.try(:price)%>&nbsp;&nbsp;<%= d.quantity %>x <%= d.drink.try(:name) %>
+                      $<%= d.drink.try(:price)%>&nbsp;&nbsp;<%= d.drink.try(:name) %> x <%= d.quantity %>
                       <% if d.takeaway == true %>
                         <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                       <% end %>
                     </p>
                   <% end %>
-<<<<<<< HEAD
-                 <% if can? :edit, Order %>
-                  <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-primary btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
-=======
                 </td>
                 <td>
-                  <strong>$<%= order.drink_total %></strong>
+                  <strong>$ <%= order.drink_total %></strong>
                 </td>
                 <td>
                   <strong>$<%= order.grand_total %></strong>
@@ -80,7 +76,6 @@
                 <% end %>
                 <% if can? :edit, Order %>
                   <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-warning btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
->>>>>>> 9d6bd3fc3d55c23c2bc226d9f277e8d6cb5f1a14
                 <% end %>
                 <% if can? :destroy, Order %>
                   <td class="vert-align"><%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
@@ -88,11 +83,7 @@
               </tr>
             <% end %>
           <% end %>
-<<<<<<< HEAD
-           
-=======
 
->>>>>>> 9d6bd3fc3d55c23c2bc226d9f277e8d6cb5f1a14
       </tbody>
     </table>
   </div>
@@ -106,7 +97,6 @@
   <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.0.2/js/responsive.bootstrap.min.js"></script>
 
   <script type="text/javascript">
-
     $("#orders_table").DataTable({
       "columnDefs": [ {
         "targets"  : 'no-sort',
@@ -121,7 +111,6 @@
         { responsivePriority: 9, targets: -3 },
       ]
     });
-
   </script>
 
 <% end %>

@@ -31,26 +31,8 @@
     <% end %>
   </ul>
 <% end %>
-<<<<<<< HEAD
-<table class="qr-code">
-<% @qr.modules.each_index do |x| %>
-  <tr>
-  <% @qr.modules.each_index do |y| %>
-   <% if @qr.dark?(x,y) %>
-    <td class="black"/>
-   <% else %>
-    <td class="white"/>
-   <% end %>
-  <% end %>
-  </tr>
-<% end %>
-</table>
-<br />
-<br />
-<%= link_to "New QR Code", new_qr_code_path %>
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
-=======
+
+
 <br>
 <br>
 <% if @order.paid? %>
@@ -76,5 +58,9 @@
   <br>
   <br>
   <%= link_to "Pay $#{@order.grand_total} now", new_order_payment_path(@order), class: "btn btn-success btn-lg" %>
+  <br>
+  <br>
+  <%= link_to "New QR Code", new_qr_code_path %> |
+  <%= link_to 'Edit', edit_order_path(@order) %> |
+  <%= link_to 'Back', orders_path %>
 <% end %>
->>>>>>> 9d6bd3fc3d55c23c2bc226d9f277e8d6cb5f1a14
