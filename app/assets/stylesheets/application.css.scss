@@ -17,11 +17,14 @@
 
 
  @import "bootstrap-sprockets";
+ @import "bootswatch/flatly/variables";
  @import "bootstrap";
 
  @import "font-awesome-sprockets";
  @import "font-awesome";
  @import "bootstrap-select";
+
+ @import "bootswatch/flatly/bootswatch";
 
 
 .navbar-brand {
