@@ -11,23 +11,24 @@
  * file per style scope.
  *
  *= require bootstrap-select
- *= require_tree .
  *= require_self
  */
 
 
- @import "bootstrap-sprockets";
+@import "bootstrap-sprockets";
 
- @mixin box-shadow($none) { box-shadow: $none; }
+@import "bootswatch/flatly/variables";
+@import "bootstrap/mixins";
+@import "bootstrap";
 
- @import "bootswatch/flatly/variables";
- @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap-select";
+@import "orders";
+@import "users";
 
- @import "font-awesome-sprockets";
- @import "font-awesome";
- @import "bootstrap-select";
 
- @import "bootswatch/flatly/bootswatch";
+@import "bootswatch/flatly/bootswatch";
 
 
 .navbar-brand {

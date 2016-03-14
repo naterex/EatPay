@@ -10,7 +10,9 @@ class OrdersController < ApplicationController
   # GET /orders.json
 
   def landing
-    render layout: false
+
+    render layout: "landing"
+
   end
 
   def index
