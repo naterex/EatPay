@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   get 'qr_codes/create'
 
   devise_for :users, controllers: {registrations: 'registrations'}
-
-  root "orders#index"
-  # root "orders#landing"
+  
+  root "orders#landing"
 
   resources :orders do
     resources :payments, only: [:new, :create]
