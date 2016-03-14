@@ -10,8 +10,9 @@ capybara-*.html
 .rspec
 !/log/.keep
 log/*
-/log/*
 /log
+/log/*
+/log/development.log
 tmp/*
 /tmp
 /tmp/*
