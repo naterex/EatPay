@@ -13,6 +13,10 @@ default: &default
 development:
   <<: *default
   database: payeat_development
+<<<<<<< HEAD
+  
+=======
+>>>>>>> master
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,8 +25,16 @@ development:
 test:
   <<: *default
   database: payeat_test
+<<<<<<< HEAD
+  
+=======
+>>>>>>> master
 
 production:
   <<: *default
   database: payeat_production
+<<<<<<< HEAD
+  
+=======
 
+>>>>>>> master

@@ -43,7 +43,7 @@
                 <td>
                   <% order.foods_orders.each do |f| %>
                     <p>
-                      $<%= f.food.try(:price)%>&nbsp;&nbsp;<%= f.quantity %>x <%= f.food.try(:name) %>
+                      $<%= f.food.try(:price)%>&nbsp;&nbsp;<%= f.food.try(:name) %> x <%= f.quantity %>
                       <% if f.takeaway == true %>
                         <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                       <% end %>
@@ -51,12 +51,12 @@
                   <% end %>
                 </td>
                 <td>
-                  <strong>$<%= order.food_total %></strong>
+                  <strong>$ <%= order.food_total %></strong>
                 </td>
                 <td>
                   <% order.drinks_orders.each do |d| %>
                     <p>
-                      $<%= d.drink.try(:price)%>&nbsp;&nbsp;<%= d.quantity %>x <%= d.drink.try(:name) %>
+                      $<%= d.drink.try(:price)%>&nbsp;&nbsp;<%= d.drink.try(:name) %> x <%= d.quantity %>
                       <% if d.takeaway == true %>
                         <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                       <% end %>
@@ -64,7 +64,7 @@
                   <% end %>
                 </td>
                 <td>
-                  <strong>$<%= order.drink_total %></strong>
+                  <strong>$ <%= order.drink_total %></strong>
                 </td>
                 <td>
                   <strong>$<%= order.grand_total %></strong>
