@@ -1,6 +1,6 @@
 #PayEat
 
-=========
+[PayEat](http://eatpay.herokuapp.com)
 
 ##About
 Order management & payment processing solution for restaurants
