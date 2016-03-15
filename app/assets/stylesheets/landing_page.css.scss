@@ -14,6 +14,19 @@ section#subscribe {
     background-repeat: no-repeat;
 }
 
+section#charity {
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(../assets/forward.jpg);
+    background-position: center 60%;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 section#subscribe .section-heading {
     color: #fff;
 }
