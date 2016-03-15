@@ -266,4 +266,8 @@ Devise.setup do |config|
   # Devise confirmation
   config.reconfirmable = false
   # config.allow_unconfirmed_access_for = 365.days
+
+  # Precompile assets for Heroku
+  config.secret_key = ENV['DEVISE_SECRET_KEY']
+
 end
