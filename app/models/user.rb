@@ -30,8 +30,8 @@ class User < ActiveRecord::Base
   end
 
   protected
-  def confirmation_required?
-    false
+    def confirmation_required?
+      false
   end
 
 end

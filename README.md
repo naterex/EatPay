@@ -13,7 +13,7 @@ Order management & payment processing solution for restaurants
 
 ##Project goals
 * Full stack development
-* Reponsive, can but used on web & mobile
+* Responsive, can be used on web & mobile
 * [Heroku](https://www.heroku.com) deployment
 * Version-control using [GitHub](http://github.com)
 * Project managed in [Trello](http://www.trello.com)
