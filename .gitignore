@@ -14,6 +14,7 @@ log/*
 /log/*
 /log/development.log
 /log/braintree.log
+/log/production.log
 tmp/*
 /tmp
 /tmp/*
