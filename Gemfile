@@ -60,11 +60,11 @@ gem 'gon', '~> 6.0', '>= 6.0.1'
 # use postgres for DB in dev, test, & prod
 gem 'pg'
 
-group :development, :test do
-  # Use letter opener for email testing
-  gem "letter_opener"
-  gem 'letter_opener_web'
+# Use letter opener for email testing
+gem "letter_opener"
+gem 'letter_opener_web'
 
+group :development, :test do
   gem 'pry-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
