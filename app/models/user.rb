@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   def set_default_user_role
     return unless self.role.nil?
-    self.role  = Role.where(name: "Waiter").first # waiter role
+    self.role  = Role.where(name: "Manager").first # manager role
     self.save
   end
 
