@@ -11,24 +11,27 @@
  * file per style scope.
  *
  *= require bootstrap-select
- *= require_tree .
  *= require_self
  */
 
 
- @import "bootstrap-sprockets";
- @import "bootswatch/flatly/variables";
- @import "bootstrap";
+@import "bootstrap-sprockets";
 
- @import "font-awesome-sprockets";
- @import "font-awesome";
- @import "bootstrap-select";
+@import "bootswatch/flatly/variables";
+@import "bootstrap/mixins";
+@import "bootstrap";
 
- @import "bootswatch/flatly/bootswatch";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap-select";
+@import "orders";
+@import "users";
+
+
+@import "bootswatch/flatly/bootswatch";
 
 
 .navbar-brand {
-  color: white !important;
   font-weight: bold;
   font-size: 2.5rem;
 }
@@ -43,16 +46,12 @@
     vertical-align: middle;
 }
 
-/* text center */
-.tcenter {
-	text-align: center;
-}
 
- @media (max-width: 768px) {
- /* add some space in left side of nav button in mobile */
- 	.new-order-btn {
- 		padding-left: 15px;
- 	}
+@media (max-width: 768px) {
+/* add some space in left side of nav button in mobile */
+	.new-order-btn {
+		padding-left: 15px;
+	}
 }
 
 /* qr code */
@@ -82,6 +81,13 @@ table.qr-code td.white {
   background-color: #fff;
 }
 
+li {
+  list-style-type: none;
+}
+
+.receipt {
+  border: 1px solid #e3e3e3;
+}
 
 body {
     position: relative;
@@ -252,7 +258,7 @@ body, html {
     border-radius: 0;
     border: none;
     background-color: #222;
-    box-shadow: none;
+    z: none;
 }
 
 /*-------------------------------*/

@@ -1,59 +1,154 @@
-<h2>
-  Table: #<%= @order.table_number %>
-</h2>
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 receipt">
 
-<% if @order.foods_orders.present? %>
-  <h3>Foods: </h3>
-  <ul>
-    <% @order.foods_orders.each do |co| %>
-      <li><%= co.food.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%> | Takeaway:
-        <% if co.takeaway == true %>
-          Yes
-          <% else %>
-          No
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <address>
+          <strong>'Stache Cafe</strong>
+          <br>
+          12345 Jalan 22/11
+          <br>
+          Damansara Utama, Kuala Lumpur
+          <br>
+          <abbr title="Phone">P:</abbr> +60-10-216-9984
+        </address>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+        <p>
+          <em>Date: <%= Date.today %></em>
+        </p>
+        <p>
+          <em>Receipt #: 34522677W</em>
+        </p>
+      </div>
+    </div><!-- row -->
+    <hr>
+    <div class="row">
+      <div class="text-center">
+        <h2>Table: #<%= @order.table_number %> receipt</h2>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Quantity</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @order.foods_orders.present? %>
+            <td><h5><strong>Food:</strong></h5></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <% @order.foods_orders.each do |co| %>
+            <tr>
+              <td class="col-md-9">
+                <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= co.food.name %></em>
+                <% if co.takeaway == true %>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-truck"></i> <small>(takeaway)</small>
+                <% else %>
+                <% end %>
+              </td>
+              <td class="col-md-1" style="text-align: center"> <%= co.quantity %> </td>
+              <td class="col-md-1 text-center">$<%= co.food.price %></td>
+              <td class="col-md-1 text-center">$<%= co.quantity * co.food.price %></td>
+            </tr>
+            <% end %>
+          <% end %>
 
-<% if @order.drinks_orders.present? %>
-<h3>Drinks: </h3>
-  <ul>
-    <% @order.drinks_orders.each do |co| %>
-      <li><%= co.drink.name %> | Quantity: <%= co.quantity%> | Status: <%= co.status%> | Takeaway:
-        <% if co.takeaway == true %>
-          Yes
-          <% else %>
-          No
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+          <% if @order.drinks_orders.present? %>
+            <td><h5><strong>Drinks:</strong></h5></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <% @order.drinks_orders.each do |co| %>
+            <tr>
+              <td class="col-md-9">
+                <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= co.drink.name %></em>
+                <% if co.takeaway == true %>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-truck"></i> <small>(takeaway)</small>
+                <% else %>
+                <% end %>
+              </td>
+              <td class="col-md-1" style="text-align: center"> <%= co.quantity %> </td>
+              <td class="col-md-1 text-center">$<%= co.drink.price %></td>
+              <td class="col-md-1 text-center">$<%= co.quantity * co.drink.price %></td>
+            </tr>
+
+            <% end %>
+          <% end %>
+
+          <!--
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right">
+              <p>
+                <strong>Subtotal: </strong>
+              </p>
+              <p>
+                <strong>Tax: </strong>
+              </p>
+            </td>
+
+            <td class="text-center">
+              <p>
+                <strong>$<%= @order.grand_total %></strong>
+              </p>
+              <p>
+                <strong>$6.94</strong>
+              </p>
+            </td>
+          </tr>
+            -->
+
+          <tr>
+            <td>   </td>
+            <td>   </td>
+            <td class="text-right"><h4><strong>Total: </strong></h4></td>
+            <td class="text-center text-danger"><h4><strong>$<%= @order.grand_total %></strong></h4></td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- row -->
+    <div class="row">
+      <% if @order.paid? %>
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="text-center">
+            <h4>Order: #<%= @order.id %> <span class="label label-success">payment complete</span> via <span class="label label-warning"><%= @order.payment.payment_type %></span>
+            <br><br>
+            on <%= @order.payment.updated_at.to_date %> at <%= @order.payment.updated_at.to_s(:time) %></h4>
+          </div>
+        </div>
+      <% else %>
+        <div class="col-sm-6 col-sm-offset-4">
+          <p>Please scan this QR Code to pay.</p>
+          <table class="qr-code">
+            <% @qr.modules.each_index do |x| %>
+              <tr>
+                <% @qr.modules.each_index do |y| %>
+                  <% if @qr.dark?(x,y) %>
+                    <td class="black"/>
+                  <% else %>
+                    <td class="white"/>
+                  <% end %>
+                <% end %>
+              </tr>
+            <% end %>
+          </table>
+          <br>
+        </div>
+      </div><!-- row -->
+      <div class="row">
+        <%= link_to "Pay $#{@order.grand_total} now", new_order_payment_path(@order), class: "btn btn-success btn-lg btn-block" %>
+      </div>
+    <% end %><!-- if @order.paid? -->
+  </div><!-- well receipt -->
+</div><!-- row -->
 <br>
 <br>
-<% if @order.paid? %>
-  <div class="well">
-    <h4>Order: #<%= @order.id %> <span class="label label-success">payment complete</span> via <span class="label label-warning"><%= @order.payment.payment_type %></span> on <%= @order.payment.updated_at.to_date %> at <%= @order.payment.updated_at.to_s(:time) %></h4>
-  </div>
-<% else %>
-<!--   <%= link_to 'Edit', edit_order_path(@order), class: "btn btn-warning" %> |
-  <%= link_to 'Back', orders_path, class: "btn btn-default" %> -->
-  <table class="qr-code">
-  <% @qr.modules.each_index do |x| %>
-    <tr>
-    <% @qr.modules.each_index do |y| %>
-     <% if @qr.dark?(x,y) %>
-      <td class="black"/>
-     <% else %>
-      <td class="white"/>
-     <% end %>
-    <% end %>
-    </tr>
-  <% end %>
-  </table>
-  <br>
-  <br>
-  <%= link_to "Pay $#{@order.grand_total} now", new_order_payment_path(@order), class: "btn btn-success btn-lg" %>
-<% end %>
+<br>

@@ -8,8 +8,15 @@
 *.rbc
 capybara-*.html
 .rspec
+!/log/.keep
+log/*
 /log
+/log/*
+/log/development.log
+/log/braintree.log
+tmp/*
 /tmp
+/tmp/*
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /public/system
@@ -43,11 +50,6 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
-
-# Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
-/tmp
 
 ### OSX ###
 .DS_Store
