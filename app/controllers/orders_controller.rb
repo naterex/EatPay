@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
 
   before_action :authenticate_user!, only: [:show, :index, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
   before_action :set_order, only: [:show, :edit, :update, :destroy, :order_success]
-
+  require 'rqrcode_png'
   # GET /orders
   # GET /orders.json
 
@@ -26,18 +26,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
-    # order = Order.find(qr_code_params[:id])
-    # new_order_payment_url = "http://localhost:3000"
-    # new_order_payment_url(order) # => http://localhost:3000/orders/2/payments/new
-    payment = "http://localhost:3000/orders/#{@order.id}/payments/new"
-    @qr = RQRCode::QRCode.new( payment, size: 5)
-    # @qr = RQRCode::QRCode.new(params[:id], size: 1)
-
-
-    # order = Order.find(qr_code_params[:id])
-    # new_order_payment_url(order) # => http://localhost:3000/orders/2/payments/new
-    # @qr = RQRCode::QRCode.new(qr_code_params[:word], size: 1)
-
+    @qr = RQRCode::QRCode.new("http://eatpay.herokuapp.com/orders/#{@order.id}/payments/new", size: 6)
   end
 
   def order_success
@@ -136,6 +125,7 @@ class OrdersController < ApplicationController
     def qr_code_params
       params.permit(:id)
     end
+
 end
 
 # order = Order.find(qr_code_params[:id])

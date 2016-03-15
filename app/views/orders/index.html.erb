@@ -62,6 +62,7 @@
                       <% end %>
                     </p>
                   <% end %>
+
                 </td>
                 <td>
                   <strong>$ <%= order.drink_total %></strong>
@@ -97,7 +98,6 @@
   <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.0.2/js/responsive.bootstrap.min.js"></script>
 
   <script type="text/javascript">
-
     $("#orders_table").DataTable({
       "columnDefs": [ {
         "targets"  : 'no-sort',
@@ -112,7 +112,6 @@
         { responsivePriority: 9, targets: -3 },
       ]
     });
-
   </script>
 
 <% end %>

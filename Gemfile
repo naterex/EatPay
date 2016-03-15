@@ -46,6 +46,10 @@ gem 'bootstrap-select-rails'
 
 # encode QR codes
 gem 'rqrcode', '~> 0.10.1'
+gem 'rqrcode_png'
+gem 'rqrcode-with-patches', '~> 0.5.4'
+
+#gem 'nokogiri', '1.6.7.2'
 
 # braintree payments
 gem 'braintree', '~> 2.58'
