@@ -58,14 +58,14 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 # get your Rails variables in your js
 gem 'gon', '~> 6.0', '>= 6.0.1'
 
-# use postgres for DB
+# use postgres for DB in dev, test, & prod
 gem 'pg'
 
-# Use letter opener for email testing
-gem "letter_opener", :group => :development
-gem 'letter_opener_web', :group => :development
-
 group :development, :test do
+  # Use letter opener for email testing
+  gem "letter_opener"
+  gem 'letter_opener_web'
+
   gem 'pry-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -79,7 +79,5 @@ group :development, :test do
 end
 
 group :production do
-  # gem 'pg',             '0.17.1'
-  # gem 'rails_12factor', '0.0.2'
   gem 'rails_12factor'
 end
