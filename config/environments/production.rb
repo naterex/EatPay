@@ -82,6 +82,8 @@ Rails.application.configure do
 
   # Devise
   config.action_mailer.default_url_options = { host: 'payeat.herokuapp.com' }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
 
   # Mailer
   config.action_mailer.delivery_method = :smtp
@@ -91,7 +93,7 @@ Rails.application.configure do
     domain:               'gmail.com',
     user_name:            ENV["GMAIL_USERNAME"],
     password:             ENV["GMAIL_PASSWORD"],
-    authentication:       'plain',
+    authentication:       'login',
     enable_starttls_auto: true  }
 
 end
