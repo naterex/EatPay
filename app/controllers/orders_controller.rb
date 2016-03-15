@@ -26,17 +26,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
-    # order = Order.find(qr_code_params[:id])
-    # new_order_payment_url = "http://localhost:3000"
-    # new_order_payment_url(order) # => http://localhost:3000/orders/2/payments/new
     @qr = RQRCode::QRCode.new("http://eatpay.herokuapp.com/orders/#{@order.id}/payments/new", size: 6)
-    # @qr = RQRCode::QRCode.new(params[:id], size: 1)
-
-
-    # order = Order.find(qr_code_params[:id])
-    # new_order_payment_url(order) # => http://localhost:3000/orders/2/payments/new
-    # @qr = RQRCode::QRCode.new(qr_code_params[:word], size: 1)
-
   end
 
   def order_success

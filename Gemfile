@@ -61,6 +61,10 @@ gem 'gon', '~> 6.0', '>= 6.0.1'
 # use postgres for DB
 gem 'pg'
 
+# Use letter opener for email testing
+gem "letter_opener", :group => :development
+gem 'letter_opener_web', :group => :development
+
 group :development, :test do
   gem 'pry-rails'
 
