@@ -27,4 +27,9 @@ Rails.application.routes.draw do
 
   # order success page
   get '/orders/:id/success',  to: 'orders#order_success', as: :order_success
+
+  # letter opener
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/emails"
+  end
 end

@@ -13,6 +13,7 @@ log/*
 /log
 /log/*
 /log/development.log
+/log/braintree.log
 tmp/*
 /tmp
 /tmp/*
