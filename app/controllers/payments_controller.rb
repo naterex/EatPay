@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   before_action :find_order, only: [:new, :create]
 
   def new
