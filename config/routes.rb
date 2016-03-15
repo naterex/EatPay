@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get '/orders/:id/success',  to: 'orders#order_success', as: :order_success
 
   # letter opener
-  if Rails.env.development?
+  if Rails.env.development? || Rails.env.production?
     mount LetterOpenerWeb::Engine, at: "/emails"
   end
 
