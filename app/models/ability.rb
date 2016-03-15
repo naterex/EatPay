@@ -8,11 +8,10 @@ class Ability
         can :manage, :all
 
       elsif user.has_role?('Manager')
-        cannot :manage, User
-
+        can :manage, Order
         can :manage, Food
         can :manage, Drink
-        can [:index, :show, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status], Order
+        cannot :manage, User
 
       elsif user.has_role?('Chef')
         cannot :manage, User
