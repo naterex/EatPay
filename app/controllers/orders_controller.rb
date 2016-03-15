@@ -6,15 +6,14 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :index, :new, :edit, :create, :update, :destroy, :update_foods_status, :update_drinks_status]
   before_action :set_order, only: [:show, :edit, :update, :destroy, :order_success]
   require 'rqrcode_png'
-  # GET /orders
-  # GET /orders.json
+
 
   def landing
-
     render layout: "landing"
-
   end
 
+  # GET /orders
+  # GET /orders.json
   def index
     @orders = Order.where("paid = ?", false)
   end
@@ -26,7 +25,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
-    @qr = RQRCode::QRCode.new("http://eatpay.herokuapp.com/orders/#{@order.id}/payments/new", size: 6)
+    @qr = RQRCode::QRCode.new("http://payeat.herokuapp.com/orders/#{@order.id}/payments/new", size: 6)
   end
 
   def order_success
@@ -95,7 +94,7 @@ class OrdersController < ApplicationController
       redirect_to kitchen_foods_path
     else
       flash[:danger] = "You're not allowed to delete this food order."
-      redirect_to root_path
+      redirect_to orders_path
     end
   end
 
@@ -107,7 +106,7 @@ class OrdersController < ApplicationController
       redirect_to kitchen_drinks_path
     else
       flash[:danger] = "You're not allowed to delete this drink order."
-      redirect_to root_path
+      redirect_to orders_path
     end
   end
 
@@ -127,7 +126,3 @@ class OrdersController < ApplicationController
     end
 
 end
-
-# order = Order.find(qr_code_params[:id])
-    # new_order_payment_url(order) # => http://localhost:3000/orders/2/payments/new
-    # @qr = RQRCode::QRCode.new(new_order_payment_url(order), size: 1)

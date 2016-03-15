@@ -35,55 +35,51 @@
       </thead>
 
       <tbody>
-
-          <% @orders.each do |order| %>
-            <% if order.foods_orders.first.try(:status) == 0 || order.drinks_orders.first.try(:status) == 0 %>
-              <tr>
-                <td><%= order.table_number %></td>
-                <td>
-                  <% order.foods_orders.each do |f| %>
-                    <p>
-                      $<%= f.food.try(:price)%>&nbsp;&nbsp;<%= f.quantity %>x <%= f.food.try(:name) %>
-                      <% if f.takeaway == true %>
-                        <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
-                      <% end %>
-                    </p>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.table_number %></td>
+            <td>
+              <% order.foods_orders.each do |f| %>
+                <p>
+                  $<%= f.food.try(:price)%>&nbsp;&nbsp;<%= f.quantity %>x <%= f.food.try(:name) %>
+                  <% if f.takeaway == true %>
+                    <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                   <% end %>
-                </td>
-                <td>
-                  <strong>$<%= order.food_total %></strong>
-                </td>
-                <td>
-                  <% order.drinks_orders.each do |d| %>
-                    <p>
-                      $<%= d.drink.try(:price)%>&nbsp;&nbsp;<%= d.quantity %>x <%= d.drink.try(:name) %>
-                      <% if d.takeaway == true %>
-                        <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
-                      <% end %>
-                    </p>
+                </p>
+              <% end %>
+            </td>
+            <td>
+              <strong>$<%= order.food_total %></strong>
+            </td>
+            <td>
+              <% order.drinks_orders.each do |d| %>
+                <p>
+                  $<%= d.drink.try(:price)%>&nbsp;&nbsp;<%= d.quantity %>x <%= d.drink.try(:name) %>
+                  <% if d.takeaway == true %>
+                    <i class="fa fa-truck"></i> <!-- indicate this menu is takeaway -->
                   <% end %>
-                </td>
-                <td>
-                  <strong>$<%= order.drink_total %></strong>
-                </td>
-                <td>
-                  <strong>$<%= order.grand_total %></strong>
-                </td>
-                <% if can? :manage, Order %>
-                  <td class="vert-align"><%= link_to order_path(order), class: "btn btn-primary btn-sm" do %>
-                    View Bill <i class="fa fa-credit-card"></i><% end %>
-                  </td>
-                <% end %>
-                <% if can? :edit, Order %>
-                  <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-warning btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
-                <% end %>
-                <% if can? :destroy, Order %>
-                  <td class="vert-align"><%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
-                <% end %>
-              </tr>
+                </p>
+              <% end %>
+            </td>
+            <td>
+              <strong>$<%= order.drink_total %></strong>
+            </td>
+            <td>
+              <strong>$<%= order.grand_total %></strong>
+            </td>
+            <% if can? :manage, Order %>
+              <td class="vert-align"><%= link_to order_path(order), class: "btn btn-info btn-sm" do %>
+                View Bill <i class="fa fa-credit-card"></i><% end %>
+              </td>
             <% end %>
-          <% end %>
-
+            <% if can? :edit, Order %>
+              <td class="vert-align"><%= link_to edit_order_path(order), class: "btn btn-warning btn-sm" do %>Edit <i class="fa fa-pencil-square-o"></i><% end %></td>
+            <% end %>
+            <% if can? :destroy, Order %>
+              <td class="vert-align"><%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>Delete <i class="fa fa-trash-o"></i><% end %></td>
+            <% end %>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
