@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, 
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # validates :password, presence: true, length: {minimum: 5, maximum: 120}, on: :create
@@ -30,8 +30,8 @@ class User < ActiveRecord::Base
   end
 
   protected
-  # def confirmation_required?
-  #   false
-  # end
+  def confirmation_required?
+    false
+  end
 
 end
